@@ -13,7 +13,12 @@ import * as React from "react"
 import { Checkbox } from "@/components/ui/checkbox"
 import Image from 'next/image';
 
-export function AboutCard({ title, imageSrc }) {
+interface AboutCardProps {
+  title: string;
+  imageSrc: string;
+}
+
+export function AboutCard({ title, imageSrc }: AboutCardProps) {
   const [showAboutModal, setShowAboutModal] = useState(false);
   const plugin = React.useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
 
@@ -167,9 +172,9 @@ export function AboutCard({ title, imageSrc }) {
                 {todo.map((task, index) => (
                   <li key={index} className="flex items-center">
                     <Checkbox id={`task-${index}`} checked={task.completed} disabled />
-                    <p htmlFor={`task-${index}`} className={`ml-3 ${task.completed ? "line-through text-text-darkBody" : ""}`}>
+                    <label htmlFor={`task-${index}`} className={`ml-3 ${task.completed ? "line-through text-text-darkBody" : ""}`}>
                       {task.text}
-                    </p>
+                    </label>
                   </li>
                 ))}
               </ul>

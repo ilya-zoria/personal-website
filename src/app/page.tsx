@@ -20,7 +20,7 @@ export default function Home() {
           />
           <div className="h-full grid grid-cols-1 sm:grid-cols-2 gap-6">
             <CraftCard />
-            <AboutCard />
+            <AboutCard title="About Me" imageSrc="/images/about/about-preview.png" />
           </div>
         </div>
         <div className="w-full max-w-[1400px] padding-24 sm:padding-32 flex flex-row justify-between">
