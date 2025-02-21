@@ -19,12 +19,15 @@ export function CraftCard() {
 
   // Array of video/image sources
   const craftItems = [
+    { src: "/Craft/ai-chat-perplexity.mov", alt: "AI Chat Perplexity" },
+    { src: "/Craft/back-to-future.mp4", alt: "back-to-future" },
+    { src: "/Craft/carerix-job-preview.mp4", alt: "Carerix-job-preview" },
+    { src: "/Craft/carerix-vision.mp4", alt: "Carerix Vision" },
+    { src: "/Craft/guidefoot.mp4", alt: "guidefoot" },
     { src: "/Craft/nivia.mov", alt: "nivia" },
-    // { src: "/Craft/spichify.mov", alt: "spichify" },
-    // { src: "/Craft/travel-memo.mov", alt: "travel-memo" },
-    { src: "/Craft/Carerix-vision.mp4", alt: "Carerix Vision" },
-    { src: "/Craft/AI-chat-perplexity.mov", alt: "AI Chat Perplexity" },
-    { src: "/Craft/Carerix-vision.mp4", alt: "Carerix Vision" },
+    { src: "/Craft/spichify.mov", alt: "spichify" },
+    { src: "/Craft/triple_tree.mp4", alt: "triple_tree" },
+    { src: "/Craft/notifications.mp4", alt: "notifications" },
   ];
 
   return (

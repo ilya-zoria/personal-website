@@ -47,7 +47,7 @@
 
   /* modal overlay */
   .modal-overlay {
-    @apply backdrop-blur-md bg-black/50 
+    @apply backdrop-blur-md bg-black/15 
   }
 
   /* Progresive blur */

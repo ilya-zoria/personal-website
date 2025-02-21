@@ -83,15 +83,15 @@ export function LeftCard() {
         </AnimatePresence>
       </div>
       <div className="flex justify-between items-center">
-        <p>Currently at <a className="hover:underline" href="https://brainly.com/">Brainly</a></p>
+        <p className="text-sm">Currently at <a className="hover:underline" href="https://brainly.com/">Brainly</a></p>
         <div className="flex gap-4 items-center">
-          <a href="https://drive.google.com/file/d/12cO4HPtnB-IOtTcSiD3k-1gLMPC12dWl/view" target="_blank" rel="noopener noreferrer" className="text-base hover:underline">
+          <a href="https://drive.google.com/file/d/12cO4HPtnB-IOtTcSiD3k-1gLMPC12dWl/view" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
             cv
           </a>
-          <a href="https://www.linkedin.com/in/ilya-zoria/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          <a href="https://www.linkedin.com/in/ilya-zoria/" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
             in
           </a>
-          <a href="https://x.com/ilya_zoria" target="_blank" rel="noopener noreferrer" className="hover:underline">
+          <a href="https://x.com/ilya_zoria" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
             x
           </a>
         </div>
