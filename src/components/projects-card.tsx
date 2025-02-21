@@ -92,13 +92,6 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
                 link="https://ilyazoria.notion.site/Brainly-Test-Prep-864230d6c2384846a2fc4e138820e07f?pvs=4"
                 className="gradient-1"
               />
-              {/* <Card
-                image="/images/projects/UIA.png"
-                title="Ukraine International Airlines"
-                description="Check-in online redesign"
-                link="https://ilyazoria.notion.site/UIA-Check-in-online-redesign-8fc7a9f6eed44653a12b6d374f5aa7a5?pvs=4"
-                className="gradient-5"
-              /> */}
               <Card
                 image="/images/projects/Guidefoot.png"
                 title="Guidefoot"
@@ -109,18 +102,18 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
             </div>
             {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Card
-                image="/images/projects/Guidefoot.png"
-                title="Guidefoot"
-                description="My first startup for author's tours"
-                link="https://medium.com/@ilya_zoria/guidefoot-website-for-authors-tours-ace39054783b"
-                className="gradient-4"
-              />
-              <Card
                 image="/images/projects/CheapOair.png"
                 title="CheapOair"
                 description="Redesign booking a flight on apps"
                 link="https://ilyazoria.notion.site/CheapOair-8497be415ed049319577bc8d0ce53dc5?pvs=4"
                 className="gradient-3"
+              />
+                            <Card
+                image="/images/projects/UIA.png"
+                title="Ukraine International Airlines"
+                description="Check-in online redesign"
+                link="https://ilyazoria.notion.site/UIA-Check-in-online-redesign-8fc7a9f6eed44653a12b6d374f5aa7a5?pvs=4"
+                className="gradient-5"
               />
             </div> */}
           </div>
