@@ -14,7 +14,7 @@ const CraftItem: React.FC<CraftItemProps> = ({ src, alt }) => {
   return (
     <div className="flex justify-center items-center bg-background-grey  border border-black/10 dark:border-white/10 border-radius-inside overflow-hidden">
       {isVideo ? (
-        <video ref={videoRef} className="w-full h-auto max-h-[400px]" autoPlay muted loop>
+        <video ref={videoRef} className="w-full h-auto max-h-[500px]" autoPlay muted loop>
           <source src={src} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
