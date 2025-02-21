@@ -24,7 +24,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full max-w-[1400px] padding-24 sm:padding-32 flex flex-row justify-between">
-          <p className="text-sm">© 2025 Ilya Zoria</p>
+          <p className="text-sm">2025 Ilya Zoria</p>
           <p className="text-sm">Made with ❤️</p>
         </div>
       </div>
