@@ -67,7 +67,7 @@ export function LeftCard() {
           >
             <div className="md:text-7xl text-5xl font-semibold flex flex-col text-center">
               <span>Design</span>
-              <span className="mt-2 text-5xl font-semibold indie-flower-regular text-text-gray">
+              <span className="mt-2 text-5xl font-semibold text-text-gray">
                 {titleSuffixes[titleIndex].split("").map((letter, index) => (
                   <motion.span
                     key={index}

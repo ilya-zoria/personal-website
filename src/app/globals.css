@@ -11,7 +11,7 @@
 
   /* Fonts */
   h2 {
-    @apply text-3xl font-semibold; /* Big animated text */
+    @apply text-3xl font-semibold;
   }
   h3 {
     @apply font-semibold text-xl
