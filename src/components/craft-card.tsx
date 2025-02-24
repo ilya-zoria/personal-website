@@ -17,27 +17,32 @@ export function CraftCard() {
     setShowCraftModal(false);
   };
 
-  // Array of video/image sources
   const craftItems = [
-    // { src: "/Craft/ai-chat-perplexity.mov", alt: "AI Chat Perplexity" },
-    { src: "/Craft/back-to-future.mp4", alt: "back-to-future" },
+    { src: "/Craft/back-to-future.mov", alt: "back-to-future" },
     { src: "/Craft/carerix-job-preview.mp4", alt: "Carerix-job-preview" },
     { src: "/Craft/carerix-vision.mp4", alt: "Carerix Vision" },
-    // { src: "/Craft/guidefoot.mp4", alt: "guidefoot" },
   ];
   const craftItems2 = [
     { src: "/Craft/spichify.mov", alt: "spichify" },
     { src: "/Craft/triple_tree.mp4", alt: "triple_tree" },
     { src: "/Craft/nivia.mov", alt: "nivia" },
     // { src: "/Craft/notifications.mp4", alt: "notifications" },
+    // { src: "/Craft/ai-chat-perplexity.mov", alt: "AI Chat Perplexity" },
+    // { src: "/Craft/guidefoot.mp4", alt: "guidefoot" },
   ];
 
   return (
     <div>
+      {/* <BaseCard
+        title="Craft"
+        imageSrc="/Craft/craft-preview.png"
+        onClick={handleOpenCraftModal}
+      >
+      </BaseCard> */}
       <BaseCard
         title="Craft"
-        imageSrc="/images/craft/craft-preview.png"
-        onClick={handleOpenCraftModal} // Open modal on card click
+        mediaSrc="/Craft/spichify.mov"
+        onClick={setShowCraftModal}
       >
       </BaseCard>
 

@@ -110,30 +110,29 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
     <div className="grid grid-cols-1 gap-6">
       <BaseCard
         title="About Me"
-        imageSrc="/images/about/about-preview.png"
+        mediaSrc="/images/about/about-preview.png"
         onClick={handleOpenAboutModal}
       >
       </BaseCard>
 
       <Modal isOpen={showAboutModal} onClose={handleCloseAboutModal} title="About me">
-        <div className="max-w-[650px] grid grid-cols-1 gap-6 mx-auto p-6">
+        <div className="max-w-[650px] grid grid-cols-1 gap-6 mx-auto px-6">
           <AboutInnerCard title="Hey 👋 I'm Ilya Zoria">
-            <div className="pl-6 pr-6 pb-6">
-              <p className="mt-4">
-                For over a decade, I've been helping companies bridge the gap between user needs and product vision through thoughtful design. Currently, I'm at <a className="hover:underline" href="https://brainly.com ">Brainly</a>, designing AI tools to help students study smarter.
-              </p>
-              <p className="mt-4">
-                Originally from 🇺🇦 Ukraine, I'm now based in 🇪🇸 Spain (because of crazy neighbour). 
-                Actually, war has changed not only my location; it has changed everything in my life. It's like when you click the <code>Reset</code> button and start onboarding from the beginning. But that's another story.
-              </p>
-              <p className="mt-4">
-                I love creating intuitive user experiences, prototype new ideas in Figma or code. I don't limit my self to design only and I really enjoy to buid products with a power of AI (thanks for Cursor and v0). I bealive in future where everyone can build their own products for their own needs. I'm on it a well... 
-              </p>
-              <p className="mt-4">
-                When I'm not designing, I enjoy play music with 🎸+ 🎹, and exploring the world with my family 👦🏼 👧🏻,
-              </p>
-              <img src="/images/about/about-preview.png" className="mt-6 border-radius-inside" alt="" />
-            </div>
+          <div className="pl-6 pr-6 pb-6">
+            <p className="mt-4">
+              For over a decade, I've been helping companies bridge the gap between user needs and product vision through thoughtful design. Currently, I'm at <a className="hover:underline" href="https://brainly.com">Brainly</a>, designing AI tools to help students study smarter.
+            </p>
+            <p className="mt-4">
+              Originally from 🇺🇦 Ukraine, I'm now based in 🇪🇸 Spain (because of a crazy neighbor). Actually, the war has changed not only my location; it has changed everything in my life. It’s like clicking the <code>Reset</code> button and starting onboarding from the beginning. But that’s another story.
+            </p>
+            <p className="mt-4">
+              I love creating intuitive user experiences and prototyping new ideas in Figma or code. I don't limit myself to design only—I truly enjoy building products with the power of AI (thanks to Cursor and v0). I believe in a future where everyone can create their own products for their own needs. I'm working on that as well...
+            </p>
+            <p className="mt-4">
+              When I’m not designing, I enjoy playing music with 🎸 + 🎹 and exploring the world with my family 👦🏼 👧🏻.
+            </p>
+            <img src="/images/about/about-preview.png" className="mt-6 border-radius-inside" alt="About preview" />
+          </div>
           </AboutInnerCard>
 
           <AboutInnerCard title="Memories">
@@ -151,7 +150,7 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
             </div>
           </AboutInnerCard>
 
-          <div className="bg-background-grey dark:bg-background-lightDark shadow-sm border border-border-black/10 overflow-hidden border-radius-inside">
+          <div className="bg-background-grey dark:bg-background-lightDark shadow-sm border overflow-hidden border-radius-inside">
             <div className="bg-gradient-to-b from-[#FFD703] to-[#FABD03] px-6 py-4 border-b border-b-[#DCA604]">
               <h3 className="dark:text-text">Favorite quotes</h3>
             </div>

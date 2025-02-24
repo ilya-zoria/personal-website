@@ -10,7 +10,6 @@ const config = {
 	theme: {
     	extend: {
     		colors: {
-    			border: 'theme(colors.gray.300)',
     			input: '',
     			ring: '',
     			background: {
@@ -29,13 +28,6 @@ const config = {
     	}
     },
 	plugins: [require("tailwindcss-animate")],
-	variants: {
-		extend: {
-		backgroundColor: ['dark'],
-		textColor: ['dark'],
-		borderColor: ['dark']
-		}
-	}
 } satisfies Config;
 
 export default config;

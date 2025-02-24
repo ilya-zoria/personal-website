@@ -51,8 +51,8 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
 
   return (
     <div className="">
-      <div className="h-full flex flex-col gap-6 border-radius-outside bg-background-grey dark:bg-background-lightDark cursor-pointer border border-black/10 hover:border-black/20 dark:border-white/10 dark:hover:border-white/20 shadow-sm ease-in-out duration-150" onClick={handleOpenProjectModal}>
-        <div className="flex justify-between items-center p-6">
+      <div className="h-full flex flex-col gap-6 border-radius-outside bg-background-grey dark:bg-background-lightDark cursor-pointer border hover:border-black/20 dark:hover:border-white/20 shadow-sm ease-in-out duration-150" onClick={handleOpenProjectModal}>
+        <div className="flex justify-between items-center pl-6 pt-6 pr-6 pb-10">
           <h3>Projects</h3>
           {isLocked ? (
             <button className="p-2 rounded-full hover:bg-gray-300/50 dark:hover:bg-gray-700/50">
@@ -76,7 +76,7 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
         title="Projects"
       >
         <div className="">
-          <div className="grid grid-cols-1 gap-6 max-w-[700px]">
+          <div className="grid grid-cols-1 gap-6 px-8 max-w-[700px]">
             <Card
               image="/images/projects/Carerix.png"
               title="Carerix"

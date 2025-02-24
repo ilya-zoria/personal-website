@@ -18,20 +18,20 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="max-w-[900px] w-full flex flex-col gap-6 p-6">
+      <div className="max-w-[900px] w-full flex flex-col gap-4 sm:gap-6 p-4 sm:p-8">
         <LeftCard />
-        <div className="grid gap-6">
+        <div className="grid gap-4 sm:gap-6">
           <ProjectsCard
             isLocked={!projectsUnlocked}
             onUnlock={() => setProjectsUnlocked(true)}
           />
-          <div className="h-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="h-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <CraftCard />
             <AboutCard title="About Me" imageSrc="/images/about/about-preview.png" />
           </div>
         </div>
-        <div className="w-full max-w-[1400px] padding-24 sm:padding-32 flex flex-row justify-between">
-          <p className="text-sm">2025 Ilya Zoria</p>
+        <div className="w-full flex flex-row justify-between my-4">
+          <p className="text-sm"><a className="hover:underline" href="https://savelife.in.ua/en/">Support Ukraine 🇺🇦</a></p>
           <div className="flex gap-2 align-baseline">
             <p className="text-sm">Made with</p>
             <TooltipProvider>
@@ -72,9 +72,6 @@ export default function Home() {
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
-
-            
-            
           </div>
         </div>
       </div>

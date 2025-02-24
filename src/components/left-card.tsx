@@ -27,7 +27,7 @@ export function LeftCard() {
   }, [])
 
   return (
-    <div id="left-card" className="border-radius-outside bg-background-grey dark:bg-background-lightDark border border-black/10 dark:border-white/10 p-6 flex flex-col gap-52 relative h-full">
+    <div id="left-card" className="border-radius-outside bg-background-grey dark:bg-background-lightDark border p-6 flex flex-col gap-52 relative h-full">
       {/* <Gridball className="absolute inset-0" /> */}
       <div className="flex justify-between items-center">
         <div className="relative inline-flex items-center group">
