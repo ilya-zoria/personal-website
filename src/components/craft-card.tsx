@@ -42,7 +42,7 @@ export function CraftCard() {
       <BaseCard
         title="Craft"
         mediaSrc="/Craft/spichify.mov"
-        onClick={setShowCraftModal}
+        onClick={handleOpenCraftModal}
       >
       </BaseCard>
 
