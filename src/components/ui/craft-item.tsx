@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 interface CraftItemProps {
   src: string;
@@ -10,14 +10,32 @@ interface CraftItemProps {
 const CraftItem: React.FC<CraftItemProps> = ({ src, alt }) => {
   const isVideo = src.endsWith(".mp4") || src.endsWith(".mov");
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.onloadeddata = () => setIsLoading(false);
+    }
+  }, []);
 
   return (
-    <div className="flex justify-center items-center border border-radius-inside overflow-hidden">
+    <div className="relative flex justify-center items-center border border-radius-inside overflow-hidden">
       {isVideo ? (
-        <video ref={videoRef} className="w-full h-auto max-h-[500px]" autoPlay muted loop>
-          <source src={src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <>
+          <video
+            ref={videoRef}
+            className={`w-full h-auto max-h-[500px] transition-all duration-700 ${
+              isLoading ? "blur-lg" : "blur-0 scale-100"
+            }`}
+            autoPlay
+            muted
+            loop
+          >
+            <source src={src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {isLoading && <div className="absolute inset-0 bg-black/10 animate-pulse"></div>}
+        </>
       ) : (
         <img src={src} alt={alt} className="w-full h-auto" />
       )}
@@ -25,4 +43,4 @@ const CraftItem: React.FC<CraftItemProps> = ({ src, alt }) => {
   );
 };
 
-export default CraftItem; 
+export default CraftItem;

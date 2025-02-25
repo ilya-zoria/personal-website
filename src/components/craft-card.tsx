@@ -33,12 +33,6 @@ export function CraftCard() {
 
   return (
     <div>
-      {/* <BaseCard
-        title="Craft"
-        imageSrc="/Craft/craft-preview.png"
-        onClick={handleOpenCraftModal}
-      >
-      </BaseCard> */}
       <BaseCard
         title="Craft"
         mediaSrc="/Craft/spichify.mov"
@@ -51,7 +45,7 @@ export function CraftCard() {
         onClose={handleCloseCraftModal}
         title="Craft"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 px-8 w-full mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
           <div className="flex flex-col gap-4">
             {craftItems.map((item, index) => (
               <CraftItem key={index} src={item.src} alt={item.alt} />

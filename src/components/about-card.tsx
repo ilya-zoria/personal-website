@@ -116,7 +116,7 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
       </BaseCard>
 
       <Modal isOpen={showAboutModal} onClose={handleCloseAboutModal} title="About me">
-        <div className="max-w-[650px] grid grid-cols-1 gap-6 mx-auto px-6">
+        <div className="max-w-[650px] grid grid-cols-1 gap-6">
           <AboutInnerCard title="Hey 👋 I'm Ilya Zoria">
           <div className="pl-6 pr-6 pb-6">
             <p className="mt-4">
