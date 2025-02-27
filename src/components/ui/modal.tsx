@@ -34,7 +34,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
         </div>
 
         {/* Modal Content */}
-        <div className="w-full flex justify-center mx-auto px-6 sm:px-8">
+        <div className="w-full flex justify-center mx-auto px-6 sm:px-8 pt-4">
           {children}
         </div>
 
