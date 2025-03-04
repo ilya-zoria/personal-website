@@ -22,7 +22,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
 
   return (
     <div className="m-auto fixed inset-0 z-50 flex items-center justify-center modal-overlay">
-      <div className="max-w-[1400px] max-h-full sm:max-h-[calc(100vh-2.5rem)] mx-0 sm:mx-6 overflow-auto scrollbar-hide bg-background dark:bg-background-dark border-radius-0 sm:border-radius-outside">
+      <div className="w-full max-w-[1400px] max-h-full sm:max-h-[calc(100vh-2.5rem)] mx-0 sm:mx-6 overflow-auto scrollbar-hide bg-background dark:bg-background-dark border-radius-0 sm:border-radius-outside">
         <div className="sticky top-0 z-20 w-full">
           <div className="relative z-10 flex justify-between items-center p-6 sm:p-8">
             <h2>{title}</h2>

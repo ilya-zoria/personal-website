@@ -76,7 +76,7 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
         title="Projects"
       >
         <div className="">
-          <div className="grid grid-cols-1 gap-4 sm:gap-6 max-w-[700px]">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 max-w-[650px]">
             <Card
               image="/images/projects/Carerix.png"
               title="Carerix"
