@@ -13,6 +13,7 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
   const [showPasswordModal, setShowPasswordModal] = useState(false)
   const [password, setPassword] = useState("")
   const [showProjectModal, setShowProjectModal] = useState(false)
+  const [isClosing, setIsClosing] = useState(false)
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault()
@@ -41,11 +42,13 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
     setShowPasswordModal(false)
   }
 
-  // Close modal when clicking outside
   const handleOutsideClick = (e: React.MouseEvent) => {
-    const target = e.target as HTMLElement;
-    if (target.classList.contains("modal-background")) {
-      handleClosePasswordModal();
+    if (e.target === e.currentTarget) {
+      setIsClosing(true)
+      setTimeout(() => {
+        setIsClosing(false)
+        setShowPasswordModal(false)
+      }, 300)
     }
   }
 
@@ -122,8 +125,15 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
 
       {/* Password Modal */}
       {showPasswordModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center modal-overlay" onClick={handleOutsideClick}>
-          <div className="w-full max-w-md border-radius-outside p-6 m-6 bg-background dark:bg-background-lightDark">
+        <div 
+          className={`fixed inset-0 z-50 flex items-center justify-center modal-overlay bg-black/25 backdrop-blur-sm ${
+            isClosing ? 'animate-out fade-out duration-300' : 'animate-in fade-in duration-300'
+          }`} 
+          onClick={handleOutsideClick}
+        >
+          <div className={`w-full max-w-md border-radius-outside p-6 m-6 bg-background dark:bg-background-lightDark ${
+            isClosing ? 'animate-out slide-out-to-bottom-4 duration-300' : 'animate-in slide-in-from-bottom-4 duration-300'
+          }`}>
             <div className="flex justify-between items-start">
               <h3>Unlock projects</h3>
               <button
