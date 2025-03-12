@@ -29,12 +29,24 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
     }, 300); // Match this with animation duration
   };
 
+  const handleOutsideClick = (e: React.MouseEvent) => {
+    if (e.target === e.currentTarget) {
+      setIsClosing(true)
+      setTimeout(() => {
+        setIsClosing(false)
+        onClose();
+      }, 300)
+    }
+  }
+
   if (!isOpen) return null;
 
   return (
     <div className={`m-auto fixed inset-0 z-50 flex items-center justify-center modal-overlay bg-black/25 backdrop-blur-sm ${
       isClosing ? 'animate-out fade-out duration-300' : 'animate-in fade-in duration-300'
-    }`}>
+    }`}
+    onClick={handleOutsideClick}
+    >
       <div className={`max-w-[1400px] max-h-full sm:max-h-[calc(100vh-2.5rem)] mx-0 sm:mx-6 overflow-auto scrollbar-hide bg-background dark:bg-background-dark border-radius-0 sm:border-radius-outside ${
         isClosing ? 'animate-out slide-out-to-bottom-4 duration-300' : 'animate-in slide-in-from-bottom-4 duration-300'
       }`}>
@@ -49,7 +61,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
         </div>
 
         {/* Modal Content */}
-        <div className="w-full flex justify-center mx-auto px-6 sm:px-12 pt-4">
+        <div className="w-full flex justify-center mx-auto px-6 sm:px-8 pt-4">
           {children}
         </div>
 

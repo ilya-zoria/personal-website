@@ -25,7 +25,7 @@ export function CraftCard() {
   const craftItems = [
     { src: "/Craft/back-to-future.mov", alt: "back-to-future" },
     { src: "/Craft/carerix-job-preview.mp4", alt: "Carerix-job-preview" },
-    { src: "/Craft/carerix-vision.mp4", alt: "Carerix Vision" },
+    { src: "/Craft/carerix-vision.mov", alt: "Carerix Vision" },
   ];
   const craftItems2 = [
     { src: "/Craft/spichify.mov", alt: "spichify" },
