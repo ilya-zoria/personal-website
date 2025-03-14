@@ -9,7 +9,14 @@ import { Modal } from './ui/modal'
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 
-export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlock: () => void }) {
+interface ProjectsCardProps {
+  isLocked: boolean;
+  onUnlock: () => void;
+  className?: string;
+  id?: string;
+}
+
+export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCardProps) {
   const [showPasswordModal, setShowPasswordModal] = useState(false)
   const [password, setPassword] = useState("")
   const [showProjectModal, setShowProjectModal] = useState(false)
@@ -53,23 +60,21 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
   }
 
   return (
-    <div className="">
-      <div className="h-full flex flex-col gap-6 border-radius-outside bg-background-grey dark:bg-background-lightDark cursor-pointer border hover:border-black/20 dark:hover:border-white/20 shadow-sm ease-in-out duration-150" onClick={handleOpenProjectModal}>
-        <div className="flex justify-between items-center pl-6 pt-6 pr-6 pb-10">
-          <h3>Projects</h3>
-          {isLocked ? (
-            <button className="p-2 rounded-full hover:bg-gray-300/50 dark:hover:bg-gray-700/50">
-              <Lock className="h-5 w-5 text" />
-            </button>
-          ) : (
-            <button onClick={handleOpenProjectModal} className="p-2 rounded-full hover:bg-gray-300/50 dark:hover:bg-gray-700/50">
-              <Plus className="h-5 w-5 text" />
-            </button>
-          )}
-        </div>
-        <div className="relative w-full sm:h-[280px] h-[150px]">
-          <img src="/images/projects/Projects-preview.png" className="absolute object-cover bottom-0" alt="" />
-        </div>
+    <div id={id} className={`h-full flex flex-col gap-6 border-radius-outside bg-background-grey dark:bg-background-lightDark cursor-pointer border hover:border-black/20 dark:hover:border-white/20 shadow-sm ease-in-out duration-150 ${className}`} onClick={handleOpenProjectModal}>
+      <div className="flex justify-between items-center pl-6 pt-6 pr-6 pb-10">
+        <h3>Projects</h3>
+        {isLocked ? (
+          <button className="p-2 rounded-full hover:bg-gray-300/50 dark:hover:bg-gray-700/50">
+            <Lock className="h-5 w-5 text" />
+          </button>
+        ) : (
+          <button onClick={handleOpenProjectModal} className="p-2 rounded-full hover:bg-gray-300/50 dark:hover:bg-gray-700/50">
+            <Plus className="h-5 w-5 text" />
+          </button>
+        )}
+      </div>
+      <div className="relative w-full sm:h-[280px] h-[150px]">
+        <img src="/images/projects/Projects-preview.png" className="absolute object-cover bottom-0" alt="" />
       </div>
 
       {/* Projects Modal */}
@@ -154,7 +159,6 @@ export function ProjectsCard({ isLocked, onUnlock }: { isLocked: boolean, onUnlo
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                {/* <Button variant="default" size="icon"><LockOpen className="text-white" /></Button> */}
                 <Button variant="default" size="default">Unlock</Button>
                </div> 
               <div className="flex justify-between items-center">

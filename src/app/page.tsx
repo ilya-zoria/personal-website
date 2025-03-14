@@ -22,6 +22,7 @@ export default function Home() {
         <LeftCard />
         <div className="grid gap-4 sm:gap-6">
           <ProjectsCard
+            id="projects-section"
             isLocked={!projectsUnlocked}
             onUnlock={() => setProjectsUnlocked(true)}
           />

@@ -2,9 +2,11 @@
 
 import React from "react"
 import { motion, easeInOut, AnimatePresence } from "framer-motion"
-import { Moon, Sun } from 'lucide-react'
+import { Moon, Sun, MapPin } from 'lucide-react'
 import { useTheme } from "../components/theme-provider"
 import Gridball from "./ui/Gridball"
+import Image from "next/image"
+import { Button } from "./ui/button"
 
 const transition = { duration: 1, ease: easeInOut };
 const variants = {
@@ -27,11 +29,17 @@ export function LeftCard() {
   }, [])
 
   return (
-    <div id="left-card" className="border-radius-outside bg-background-grey dark:bg-background-lightDark border p-6 flex flex-col gap-52 relative h-full">
+    <div id="left-card" className="border-radius-outside bg-background-grey dark:bg-background-lightDark border p-6 flex flex-col sm:gap-32 gap-24 relative h-full">
       {/* <Gridball className="absolute inset-0" /> */}
       <div className="flex justify-between items-center">
-        <div className="relative inline-flex items-center group">
-            {/* Arrow icon that appears on hover */}
+        <div className="relative group">
+          {/* Default state - simple text */}
+          <span className="absolute text-sm group-hover:opacity-0 transition-opacity duration-200">
+            Ilya Zoria
+          </span>
+
+          {/* Hover state - pill with arrow */}
+          <div className="relative inline-flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <motion.svg
               fill="none"
               height="18"
@@ -44,6 +52,7 @@ export function LeftCard() {
             <span className="inline-flex items-center border-radius-inside bg-background-dark px-2 py-1 text-xs font-medium text-white dark:bg-background dark:text-background-dark group-hover:translate-x-3 group-hover:translate-y-4 transition-transform duration-200">
               Ilya Zoria
             </span>
+          </div>
         </div>
         <button
           onClick={toggleTheme}
@@ -56,7 +65,9 @@ export function LeftCard() {
           )}
         </button>
       </div>
-      <div className="flex-1 flex items-center justify-center">
+
+      {/* With animated text */}
+      {/* <div className="flex-1 flex items-center justify-center">
         <AnimatePresence mode="wait">
           <motion.div
             key={titleIndex}
@@ -65,8 +76,8 @@ export function LeftCard() {
             exit="hidden"
             transition={transition}
           >
-            <div className="md:text-7xl text-5xl font-semibold flex flex-col text-center">
-              <span>Design</span>
+            <div className="text-5xl font-semibold flex flex-col text-center">
+              <span>Ilya Zoria</span>
               <span className="mt-2 text-5xl font-semibold text-text-gray">
                 {titleSuffixes[titleIndex].split("").map((letter, index) => (
                   <motion.span
@@ -81,9 +92,59 @@ export function LeftCard() {
             </div>
           </motion.div>
         </AnimatePresence>
+      </div> */}
+      <div className="flex-1 flex flex-col items-center justify-center gap-6">
+        <div className="md:w-40 md:h-40 w-32 h-32 rounded-full overflow-hidden">
+          <Image 
+            src="/images/profile.png" 
+            alt="Ilya Zoria profile"
+            width={168}
+            height={168}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
+        <div className="flex flex-col text-center">
+          <span className="md:text-5xl text-3xl font-semibold">Ilya Zoria</span>
+          <span className="md:text-xl text-lg mt-2">
+            Product designer at <a className="hover:underline" href="https://brainly.com/">Brainly</a>
+          </span>
+        </div>
+        <div className="flex gap-2">
+          <Button 
+            variant="default" 
+            size="default"
+            asChild
+          >
+            <a href="mailto:ilzorya@gmail.com">
+              Say hi 👋
+            </a>
+          </Button>
+          <Button 
+            variant="outline" 
+            size="default" 
+            onClick={() => {
+              const element = document.getElementById('projects-section');
+              if (element) {
+                const isMobile = window.innerWidth < 640; // sm breakpoint is 640px in Tailwind
+                const offset = isMobile ? 16 : 24; // 16px for mobile, 24px for desktop
+                
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - offset;
+                
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }}
+          >
+            View my work ↓
+          </Button>
+        </div>
       </div>
       <div className="flex justify-between items-center">
-        <p className="text-sm">Currently at <a className="hover:underline" href="https://brainly.com/">Brainly</a></p>
+        <p className="text-sm flex gap-1 items-center"><MapPin className="w-5 h-5" /> Alicante</p>
         <div className="flex gap-4 items-center">
           <a href="https://drive.google.com/file/d/12cO4HPtnB-IOtTcSiD3k-1gLMPC12dWl/view" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
             cv
