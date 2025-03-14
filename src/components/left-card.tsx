@@ -96,7 +96,7 @@ export function LeftCard() {
       <div className="flex-1 flex flex-col items-center justify-center gap-6">
         <div className="md:w-40 md:h-40 w-32 h-32 rounded-full overflow-hidden">
           <Image 
-            src="/images/profile.png" 
+            src="/images/Profile.png" 
             alt="Ilya Zoria profile"
             width={168}
             height={168}
