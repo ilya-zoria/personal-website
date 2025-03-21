@@ -1,12 +1,16 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { motion, easeInOut, AnimatePresence } from "framer-motion"
 import { Moon, Sun, MapPin } from 'lucide-react'
 import { useTheme } from "../components/theme-provider"
 import Gridball from "./ui/Gridball"
 import Image from "next/image"
 import { Button } from "./ui/button"
+import gsap from "gsap"
+import { PixiPlugin } from "gsap/PixiPlugin"
+
+gsap.registerPlugin(PixiPlugin)
 
 const transition = { duration: 1, ease: easeInOut };
 const variants = {
@@ -19,6 +23,7 @@ const titleSuffixes = ["interfaces", "for humans", "experience"]
 export function LeftCard() {
   const { theme, toggleTheme } = useTheme()
   const [titleIndex, setTitleIndex] = React.useState(0)
+  const imageRef = useRef(null);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -27,6 +32,48 @@ export function LeftCard() {
 
     return () => clearInterval(interval)
   }, [])
+
+  useEffect(() => {
+    const element = imageRef.current;
+    let animation;
+    
+    const handleMouseEnter = () => {
+      animation = gsap.to(element, {
+        duration: 1,
+        pixi: {
+          turbulence: 0.2,
+          distortion: 20,
+        },
+        scale: 1.05,
+        ease: "power2.out"
+      });
+    };
+    
+    const handleMouseLeave = () => {
+      if (animation) animation.kill();
+      gsap.to(element, {
+        duration: 0.8,
+        pixi: {
+          turbulence: 0,
+          distortion: 0,
+        },
+        scale: 1,
+        ease: "power2.inOut"
+      });
+    };
+    
+    if (element) {
+      element.addEventListener("mouseenter", handleMouseEnter);
+      element.addEventListener("mouseleave", handleMouseLeave);
+    }
+    
+    return () => {
+      if (element) {
+        element.removeEventListener("mouseenter", handleMouseEnter);
+        element.removeEventListener("mouseleave", handleMouseLeave);
+      }
+    };
+  }, []);
 
   return (
     <div id="left-card" className="border-radius-outside bg-background-grey dark:bg-background-lightDark border p-6 flex flex-col sm:gap-32 gap-24 relative h-full">
@@ -94,14 +141,16 @@ export function LeftCard() {
         </AnimatePresence>
       </div> */}
       <div className="flex-1 flex flex-col items-center justify-center gap-6">
-        <div className="md:w-40 md:h-40 w-32 h-32 rounded-full overflow-hidden">
-          <Image 
-            src="/images/Profile.png" 
-            alt="Ilya Zoria profile"
-            width={168}
-            height={168}
-            className="w-full h-full object-cover"
-          />
+        <div className="w-48 h-48 rounded-full overflow-hidden">
+          <div ref={imageRef} className="w-full h-full">
+            <Image 
+              src="/images/Profile.png" 
+              alt="Ilya Zoria profile"
+              width={168}
+              height={168}
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
         
         <div className="flex flex-col text-center">
