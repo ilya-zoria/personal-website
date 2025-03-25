@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/images/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"></link>
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"></link>
         <meta property="og:title" content="Ilya Zoria" />
         <meta property="og:description" content="Product designer" />
         <meta property="og:image" content="/images/thumbnail.jpg" />
