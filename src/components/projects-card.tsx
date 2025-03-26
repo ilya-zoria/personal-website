@@ -97,7 +97,7 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
                 image="/images/projects/Brainly.png "
                 title="Brainly"
                 description="Design an AI study tool for students"
-                link="https://ilyazoria.notion.site/Brainly-Test-Prep-864230d6c2384846a2fc4e138820e07f?pvs=4"
+                link="https://ilyazoria.notion.site/Brainly-Test-Prep-1c18f771dc3580079944c99db806fe0a?pvs=4"
                 className="gradient-1"
               />
               <Card
