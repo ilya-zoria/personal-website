@@ -31,6 +31,7 @@ export function CraftCard() {
     { src: "/Craft/spichify.mov", alt: "spichify" },
     { src: "/Craft/triple_tree.mp4", alt: "triple_tree" },
     { src: "/Craft/nivia.mov", alt: "nivia" },
+    // { src: "/Craft/ai-perplexity-style.mov", alt: "ai-perplexity-style" },
   ];
 
   return (

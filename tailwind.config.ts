@@ -13,7 +13,7 @@ const config = {
     			input: '',
     			ring: '',
     			background: {
-    				DEFAULT: '#F8F7F1',
+    				DEFAULT: '#fff',
     				dark: '#191919',
     				lightDark: '#252525',
     				grey: '#fff'

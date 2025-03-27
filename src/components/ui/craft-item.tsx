@@ -79,7 +79,7 @@ const Skeleton = () => (
           style={{ 
             backgroundImage: `url(${thumbnailSrc})`,
             filter: 'blur(10px)',
-            transform: 'scale(1.1)',
+            transform: 'scale(1)',
             height: "100%",
             width: "100%"
           }}
