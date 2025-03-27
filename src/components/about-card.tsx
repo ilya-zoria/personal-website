@@ -43,7 +43,6 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
   ], []);
 
   const todo = useMemo(() => [
-    { text: "Son and daughter", completed: true },
     { text: "Build the house", completed: true },
     { text: "Ride a Tesla", completed: true },
     { text: "Live in Asia for 4 months", completed: true },
@@ -52,6 +51,8 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
     { text: "Live in another country for some time", completed: true },
     { text: "Visit Metallica concert", completed: true },
     { text: "Visit AC/DC concert", completed: true },
+    { text: "Attend a match in Barcelona with son", completed: true },
+    { text: "Live near sea", completed: true },
     { text: "Record an album", completed: false },
     { text: "Surf in Portugal", completed: false },
     { text: "Start my own business", completed: false },
@@ -61,17 +62,16 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
     { text: "Alps motorcycle tour", completed: false },
     { text: "See the Northern Lights", completed: false },
     { text: "Ride a Ferrari", completed: false },
-    { text: "Attend a match in Barcelona with son", completed: false },
     { text: "Take my kids to a rock concert", completed: false },
     { text: "Attend a football match in England with dad", completed: false },
     { text: "Return to the square in Paris where I proposed to Iryna", completed: false },
-    { text: "Visit Nepal", completed: false },
     { text: "Safari tour in Africa", completed: false },
+    { text: "Visit Nepal", completed: false },
     { text: "Visit South America", completed: false },
     { text: "Visit Iceland", completed: false },
     { text: "Visit Tenerife", completed: false },
-    { text: "Yacht tour in the Mediterranean", completed: false },
     { text: "Visit Dubai", completed: false },
+    { text: "Yacht tour in the Mediterranean", completed: false },
   ], []);
 
   const person = useMemo(() => [
