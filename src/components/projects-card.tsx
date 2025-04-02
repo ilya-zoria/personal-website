@@ -24,7 +24,7 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault()
-    if (password === "111") {
+    if (password === "Slava_Ukraini") {
       onUnlock?.()
       setShowPasswordModal(false)
       setShowProjectModal(true) // Open project modal after unlocking
