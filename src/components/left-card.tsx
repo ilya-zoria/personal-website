@@ -113,7 +113,19 @@ export function LeftCard() {
         </button>
       </div>
 
-      {/* With animated text */}
+      <div className="flex-1 flex flex-col items-center justify-center gap-6">
+        <div className="w-40 h-40 rounded-full overflow-hidden">
+          <div ref={imageRef} className="w-full h-full">
+            <Image 
+              src="/images/Profile.png" 
+              alt="Ilya Zoria profile"
+              width={160}
+              height={160}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+          {/* Animated text */}
       {/* <div className="flex-1 flex items-center justify-center">
         <AnimatePresence mode="wait">
           <motion.div
@@ -123,9 +135,9 @@ export function LeftCard() {
             exit="hidden"
             transition={transition}
           >
-            <div className="text-5xl font-semibold flex flex-col text-center">
-              <span>Ilya Zoria</span>
-              <span className="mt-2 text-5xl font-semibold text-text-gray">
+            <div className="text-3xl font-medium flex flex-col text-center">
+              <span>Senior product designer</span>
+              <span className="mt-2 text-4xl font-normal">
                 {titleSuffixes[titleIndex].split("").map((letter, index) => (
                   <motion.span
                     key={index}
@@ -140,23 +152,10 @@ export function LeftCard() {
           </motion.div>
         </AnimatePresence>
       </div> */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-6">
-        <div className="w-48 h-48 rounded-full overflow-hidden">
-          <div ref={imageRef} className="w-full h-full">
-            <Image 
-              src="/images/Profile.png" 
-              alt="Ilya Zoria profile"
-              width={168}
-              height={168}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-        
-        <div className="flex flex-col text-center">
+        <div className="flex flex-col text-center gap-5 mb-3">
           <span className="md:text-5xl text-3xl font-semibold">Ilya Zoria</span>
-          <span className="md:text-xl text-lg mt-2">
-            Product designer at <a className="hover:underline" href="https://brainly.com/">Brainly</a>
+          <span className="md:text-xl text-lg">
+            Product designer with indiemaker mindset
           </span>
         </div>
         <div className="flex gap-2">
