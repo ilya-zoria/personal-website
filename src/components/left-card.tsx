@@ -194,7 +194,7 @@ export function LeftCard() {
       <div className="flex justify-between items-center">
         <p className="text-sm flex gap-1 items-center"><MapPin className="w-5 h-5" /> Alicante</p>
         <div className="flex gap-4 items-center">
-          <a href="https://drive.google.com/file/d/1-TU3-wHzS_Tc6fTgpIsdugSeBXRwrnHE/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
+          <a href="https://docs.google.com/document/d/11aLN-ZYWHOVM0TJ3mkV2PHSwiRUD3Tvy01J-QFZfmC8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
             cv
           </a>
           <a href="https://www.linkedin.com/in/ilya-zoria/" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
