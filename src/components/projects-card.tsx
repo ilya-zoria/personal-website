@@ -103,7 +103,7 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
               <Card
               image="/images/projects/Carerix.png"
               title="Carerix"
-              description="Redesign applicant tracking system"
+              description="Redesign of applicant tracking system"
               link="https://ilyazoria.notion.site/Carerix-8a8958db2aad4ba3bcec1468a67c856a?pvs=4"
               className="gradient-2"
               />
@@ -119,7 +119,7 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
               <Card
                 image="/images/projects/UIA.png"
                 title="Ukraine International Airlines"
-                description="Check-in online redesign"
+                description="Redesign of check-in online"
                 link="https://ilyazoria.notion.site/UIA-Check-in-online-redesign-8fc7a9f6eed44653a12b6d374f5aa7a5?pvs=4"
                 className="gradient-5"
               />
