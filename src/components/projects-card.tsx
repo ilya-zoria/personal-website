@@ -74,7 +74,7 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
         )}
       </div>
       <div className="relative w-full sm:h-[280px] h-[150px]">
-        <img src="/images/projects/Projects-preview.png" className="absolute object-cover bottom-0" alt="" />
+        <img src="/images/projects/Projects-preview-2.png" className="absolute object-cover bottom-0" alt="" />
       </div>
 
       {/* Projects Modal */}
@@ -86,20 +86,29 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
         <div className="">
           <div className="grid grid-cols-1 gap-4 sm:gap-6 max-w-[650px]">
             <Card
+                image="/images/projects/Brainly. Learning companion.png"
+                title="Brainly. AI Learning Companion"
+                description="Design vision for Brainly’s future"
+                link="https://ilyazoria.notion.site/Brainly-AI-Learning-Companion-864230d6c2384846a2fc4e138820e07f?pvs=4"
+                className="gradient-4"
+              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <Card
+                image="/images/projects/Brainly.png "
+                title="Brainly. Test Prep"
+                description="AI study tool for students"
+                link="https://ilyazoria.notion.site/Brainly-Test-Prep-1c18f771dc3580079944c99db806fe0a?pvs=4"
+                className="gradient-1"
+              />
+              <Card
               image="/images/projects/Carerix.png"
               title="Carerix"
               description="Redesign applicant tracking system"
               link="https://ilyazoria.notion.site/Carerix-8a8958db2aad4ba3bcec1468a67c856a?pvs=4"
               className="gradient-2"
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <Card
-                image="/images/projects/Brainly.png "
-                title="Brainly"
-                description="Design an AI study tool for students"
-                link="https://ilyazoria.notion.site/Brainly-Test-Prep-1c18f771dc3580079944c99db806fe0a?pvs=4"
-                className="gradient-1"
               />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Card
                 image="/images/projects/Guidefoot.png"
                 title="Guidefoot"
@@ -107,23 +116,14 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
                 link="https://medium.com/@ilya_zoria/guidefoot-website-for-authors-tours-ace39054783b"
                 className="gradient-4"
               />
-            </div>
-            {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <Card
-                image="/images/projects/CheapOair.png"
-                title="CheapOair"
-                description="Redesign booking a flight on apps"
-                link="https://ilyazoria.notion.site/CheapOair-8497be415ed049319577bc8d0ce53dc5?pvs=4"
-                className="gradient-3"
-              />
-                            <Card
                 image="/images/projects/UIA.png"
                 title="Ukraine International Airlines"
                 description="Check-in online redesign"
                 link="https://ilyazoria.notion.site/UIA-Check-in-online-redesign-8fc7a9f6eed44653a12b6d374f5aa7a5?pvs=4"
                 className="gradient-5"
               />
-            </div> */}
+            </div>
           </div>
         </div>
       </Modal>
