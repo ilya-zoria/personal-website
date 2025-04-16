@@ -69,8 +69,8 @@ const Skeleton = () => (
 
   return (
     <div 
-      className="relative overflow-hidden bg-background-grey dark:bg-background-lightDark shadow-sm border border-radius-inside"
-      style={{ minHeight: "200px" }} // Prevent height collapse
+      className="relative overflow-hidden bg-background-grey dark:bg-background-lightDark shadow-sm border rounded-lg sm:border-radius-inside"
+      style={{ minHeight: "180px" }} // Prevent height collapse
     >
       {/* Blurred Thumbnail */}
       {(isLoading || hasError) && thumbnailSrc && (

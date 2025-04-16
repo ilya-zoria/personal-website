@@ -26,15 +26,13 @@ export function CraftCard() {
     { src: "/Craft/back-to-future.mov", alt: "back-to-future" },
     { src: "/Craft/intertactive-widgets.mp4", alt: "intertactive-widgets" },
     { src: "/Craft/ai_learning_companion_interactions.mp4", alt: "learning_companion_interactions" },
-    // { src: "/Craft/ai-perplexity-style.mp4", alt: "ai-perplexity-style" },
     { src: "/Craft/nivia.mp4", alt: "nivia" },
   ];
   const craftItems2 = [
     { src: "/Craft/spichify.mp4", alt: "spichify" },
     { src: "/Craft/carerix-job-preview.mp4", alt: "Carerix-job-preview" },
-    { src: "/Craft/carerix-vision.mp4", alt: "Carerix Vision" },
+    { src: "/Craft/carerix_vision.mp4", alt: "carerix_vision" },
     { src: "/Craft/triple_tree.mp4", alt: "triple_tree" },
-    // { src: "/Craft/guidefoot.mp4", alt: "guidefoot" },
   ];
 
   return (
