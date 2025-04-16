@@ -17,7 +17,7 @@ const CraftItem: React.FC<CraftItemProps> = ({ src, alt }) => {
 
 
 const Skeleton = () => (
-  <div className="absolute inset-0 bg-gray-300 dark:bg-gray-700 animate-pulse" />
+  <div className="absolute inset-0 bg-gray-100 dark:bg-gray-900 animate-pulse" />
 );
   
   // Generate a thumbnail path based on the video src
