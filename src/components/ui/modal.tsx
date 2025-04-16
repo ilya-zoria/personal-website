@@ -4,11 +4,22 @@ import { X } from 'lucide-react';
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  title: string;
+  title: ReactNode;
   children: ReactNode;
+  width?: string;
+  showHeaderBlur?: boolean;
+  showFooterBlur?: boolean;
 }
 
-export function Modal({ isOpen, onClose, title, children }: ModalProps) {
+export function Modal({ 
+  isOpen, 
+  onClose, 
+  title, 
+  children, 
+  width = "max-w-[1400px]",
+  showHeaderBlur = true,
+  showFooterBlur = true 
+}: ModalProps) {
   const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
@@ -42,12 +53,12 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className={`m-auto fixed inset-0 z-50 flex items-center justify-center modal-overlay bg-black/25 backdrop-blur-sm ${
+    <div className={`fixed inset-0 z-50 flex sm:items-center sm:justify-center items-end justify-center modal-overlay bg-black/25 backdrop-blur-sm ${
       isClosing ? 'animate-out fade-out duration-300' : 'animate-in fade-in duration-300'
     }`}
     onClick={handleOutsideClick}
     >
-      <div className={`max-w-[1400px] w-full max-h-full sm:max-h-[calc(100vh-2.5rem)] mx-0 sm:mx-6 overflow-auto scrollbar-hide bg-background dark:bg-background-dark border-radius-0 sm:border-radius-outside ${
+      <div className={`${width} w-full max-h-[97vh] sm:max-h-[calc(100vh-3rem)] m-3 sm:mx-6 overflow-auto scrollbar-hide bg-background dark:bg-background-dark border-radius-outside cursor-default ${
         isClosing ? 'animate-out slide-out-to-bottom-4 duration-300' : 'animate-in slide-in-from-bottom-4 duration-300'
       }`}>
         <div className="sticky top-0 z-20 w-full">
@@ -57,7 +68,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
               <X className="h-5 w-5 text" />
             </button> 
           </div>
-          <div className="h-[120px] absolute top-0 blured-header-top w-full"></div>
+          {showHeaderBlur && <div className="h-[120px] absolute top-0 blured-header-top w-full"></div>}
         </div>
 
         {/* Modal Content */}
@@ -65,7 +76,7 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
           {children}
         </div>
 
-        <div className="h-[40px] sticky bottom-0 blured-header-bottom z-50"></div>
+        {showFooterBlur && <div className="h-[40px] sticky bottom-0 blured-header-bottom z-50"></div>}
       </div>
     </div>
   );

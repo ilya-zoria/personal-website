@@ -46,7 +46,7 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
   }
 
   const handleClosePasswordModal = () => {
-    setShowPasswordModal(false)
+    setShowPasswordModal(false);
   }
 
   const handleOutsideClick = (e: React.MouseEvent) => {
@@ -88,11 +88,11 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
             <Card
                 image="/images/projects/Brainly. Learning companion.png"
                 title="Brainly. AI Learning Companion"
-                description="Design vision for Brainly’s future"
+                description="Design vision for Brainly's future"
                 link="https://ilyazoria.notion.site/Brainly-AI-Learning-Companion-864230d6c2384846a2fc4e138820e07f?pvs=4"
                 className="gradient-4"
               />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <Card
                 image="/images/projects/Brainly.png "
                 title="Brainly. Test Prep"
@@ -101,14 +101,14 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
                 className="gradient-1"
               />
               <Card
-              image="/images/projects/Carerix.png"
-              title="Carerix"
-              description="Redesign of applicant tracking system"
-              link="https://ilyazoria.notion.site/Carerix-8a8958db2aad4ba3bcec1468a67c856a?pvs=4"
-              className="gradient-2"
+                image="/images/projects/Carerix.png"
+                title="Carerix"
+                description="Redesign of applicant tracking system"
+                link="https://ilyazoria.notion.site/Carerix-8a8958db2aad4ba3bcec1468a67c856a?pvs=4"
+                className="gradient-2"
               />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <Card
                 image="/images/projects/Guidefoot.png"
                 title="Guidefoot"
@@ -129,50 +129,39 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
       </Modal>
 
       {/* Password Modal */}
-      {showPasswordModal && (
-        <div 
-          className={`fixed inset-0 z-50 flex items-center justify-center modal-overlay bg-black/25 backdrop-blur-sm ${
-            isClosing ? 'animate-out fade-out duration-300' : 'animate-in fade-in duration-300'
-          }`} 
-          onClick={handleOutsideClick}
-        >
-          <div className={`w-full max-w-md border-radius-outside p-6 m-6 bg-background dark:bg-background-lightDark ${
-            isClosing ? 'animate-out slide-out-to-bottom-4 duration-300' : 'animate-in slide-in-from-bottom-4 duration-300'
-          }`}>
-            <div className="flex justify-between items-start">
-              <h3>Unlock projects</h3>
-              <button
-                onClick={handleClosePasswordModal}
-                className="rounded-full hover:bg-gray-300/50 dark:hover:bg-gray-700/50 p-2"
-              >
-                <X className="h-5 w-5 text" />
-              </button>
+      <Modal
+        isOpen={showPasswordModal}
+        onClose={handleClosePasswordModal}
+        title={<h2>Unlock projects</h2>}
+        width="max-w-md"
+        showHeaderBlur={false}
+        showFooterBlur={false}
+      >
+        <div className="max-w-md mb-8">
+          <p className="">
+            Due to NDA I can't share details of my previous projects. To access it please enter a password.
+          </p>
+          <form onSubmit={handleUnlock} className="mt-4">
+            <div className="flex w-full max-w-sm items-center gap-2">
+              <Input
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button variant="default" size="default">Unlock</Button>
+            </div> 
+            <div className="flex justify-between items-center">
+              <p className="text-xs text-gray-500 mt-2">
+                Don't know the password?{' '}
+                <a href="mailto:ilzorya@gmail.com" className="hover:underline">
+                  Email me →
+                </a>
+              </p>
             </div>
-            <p className="pt-4">
-              Due to NDA I can't share details of my previous projects. To access it please enter a password.
-            </p>
-            <form onSubmit={handleUnlock} className="mt-4">
-              <div className="flex w-full max-w-sm items-center gap-2">
-                <Input
-                  type="password"
-                  placeholder="Enter password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <Button variant="default" size="default">Unlock</Button>
-               </div> 
-              <div className="flex justify-between items-center">
-                <p className="text-xs text-gray-500 mt-2">
-                  Don't know the password?{' '}
-                  <a href="mailto:ilzorya@gmail.com" className="hover:underline">
-                    Email me →
-                  </a>
-                </p>
-              </div>
-            </form>
-          </div>
+          </form>
         </div>
-      )}
+      </Modal>
     </div>
   )
 }
