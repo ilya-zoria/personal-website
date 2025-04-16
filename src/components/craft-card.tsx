@@ -24,7 +24,7 @@ export function CraftCard() {
 
   const craftItems = [
     { src: "/Craft/back-to-future.mov", alt: "back-to-future" },
-    { src: "/Craft/intertactive-widgets.mp4", alt: "intertactive-widgets" },
+    // { src: "/Craft/intertactive-widgets.mp4", alt: "intertactive-widgets" },
     { src: "/Craft/ai_learning_companion_interactions.mp4", alt: "learning_companion_interactions" },
     { src: "/Craft/nivia.mp4", alt: "nivia" },
   ];
