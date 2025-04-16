@@ -112,15 +112,15 @@ export function ProjectsCard({ isLocked, onUnlock, className, id }: ProjectsCard
               <Card
                 image="/images/projects/Guidefoot.png"
                 title="Guidefoot"
-                description="My first startup for author's tours"
+                description="Side project for author's tours"
                 link="https://medium.com/@ilya_zoria/guidefoot-website-for-authors-tours-ace39054783b"
                 className="gradient-4"
               />
               <Card
-                image="/images/projects/UIA.png"
-                title="Ukraine International Airlines"
-                description="Redesign of check-in online"
-                link="https://ilyazoria.notion.site/UIA-Check-in-online-redesign-8fc7a9f6eed44653a12b6d374f5aa7a5?pvs=4"
+                image="/images/projects/CheapOair.png"
+                title="CheapOair"
+                description="Redesign flight booking flow"
+                link="https://medium.com/@ilya_zoria/cheapoair-redesign-flight-booking-flow-for-mobile-apps-a111c6bdb72d"
                 className="gradient-5"
               />
             </div>
