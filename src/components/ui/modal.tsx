@@ -58,7 +58,7 @@ export function Modal({
     }`}
     onClick={handleOutsideClick}
     >
-      <div className={`${width} w-full max-h-[97vh] sm:max-h-[calc(100vh-3rem)] m-3 sm:mx-6 overflow-auto scrollbar-hide bg-background dark:bg-background-dark border-radius-outside cursor-default ${
+      <div className={`${width} w-full max-h-[calc(100vh-1.5rem)] sm:max-h-[calc(100vh-3rem)] m-3 sm:mx-6 overflow-auto scrollbar-hide bg-background dark:bg-background-dark border-radius-outside cursor-default ${
         isClosing ? 'animate-out slide-out-to-bottom-4 duration-300' : 'animate-in slide-in-from-bottom-4 duration-300'
       }`}>
         <div className="sticky top-0 z-20 w-full">
