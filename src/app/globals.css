@@ -5,13 +5,18 @@
 @layer base {
 
   html, body {
-    @apply text-text dark:text-text-dark antialiased bg-background dark:bg-background-dark transition-colors duration-500;
+    @apply text-text antialiased bg-background dark:bg-background-dark transition-colors duration-500;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
 
   /* Fonts */
   h2 {
-    @apply text-3xl font-semibold;
+    font-family: "Gloock", serif;
+    font-weight: 400;
+    font-style: normal;
+    @apply text-6xl;
+    line-height: 130%;
+    letter-spacing: 0.5px;
   }
   h3 {
     @apply font-semibold text-xl
@@ -20,18 +25,7 @@
     @apply font-semibold text-lg
   }
   p {
-    @apply text-base;
-  }
-  .dark p {
-    @apply text-darkBody;
-  }
-  .indie-flower-regular {
-    font-family: "Indie Flower", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 21px;
-    line-height: 130%;
-    letter-spacing: 0.5px;
+    @apply text-base text-text-body;
   }
 
   /* For Webkit-based browsers (Chrome, Safari and Opera) */
@@ -109,7 +103,7 @@
   }
 
   .border-radius-inside {
-    @apply rounded-xl
+    @apply rounded-lg
   }
 
   /* Dotted divider */
@@ -165,11 +159,7 @@
 
   /* Update border colors for dark mode */
   .border {
-    @apply border-black/10; /* Light mode border color */
-  }
-
-  .dark .border {
-    @apply border-white/10;/* Darker border color for dark mode */
+    @apply border-white/10;
   }
 
   /* Border radius classes */

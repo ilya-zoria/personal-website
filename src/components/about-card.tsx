@@ -158,7 +158,7 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
             <div className="max-h-[400px] overflow-auto scrollbar-hide px-6 py-4">
               {quotes.map((item, index) => (
                 <div key={index} className="mb-4 last:mb-0">
-                  <p className="dark:text-text-dark mb-1">{item.quote}</p>
+                  <p className="mb-1">{item.quote}</p>
                   <p className="text-sm text-text-gray">{item.author}</p>
                 </div>
               ))}
@@ -171,7 +171,7 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
                 {todo.map((task, index) => (
                   <li key={index} className="flex items-center">
                     <Checkbox id={`task-${index}`} checked={task.completed} disabled />
-                    <label htmlFor={`task-${index}`} className={`ml-3 ${task.completed ? "line-through text-text-darkBody" : ""}`}>
+                    <label htmlFor={`task-${index}`} className={`ml-3 ${task.completed ? "line-through text-text-body" : ""}`}>
                       {task.text}
                     </label>
                   </li>

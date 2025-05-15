@@ -1,5 +1,6 @@
 "use client"
 
+import { AlignCenter } from "lucide-react";
 import React, { useRef, useState, useEffect } from "react";
 
 interface CraftItemProps {
@@ -9,12 +10,12 @@ interface CraftItemProps {
 
 const CraftItem: React.FC<CraftItemProps> = ({ src, alt }) => {
   const isVideo = src.endsWith(".mp4") || src.endsWith(".mov");
+  const isImage = src.endsWith(".png");
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [thumbnailSrc, setThumbnailSrc] = useState("");
-
 
 const Skeleton = () => (
   <div className="absolute inset-0 bg-gray-100 dark:bg-gray-900 animate-pulse" />
@@ -26,11 +27,14 @@ const Skeleton = () => (
       // Replace video extension with jpg (assuming thumbnails exist with same base name)
       const thumbPath = src.replace(/\/Craft\/(.*)\.(mp4|mov)$/, "/Craft/thumbnails/$1-thumb.jpg");
       setThumbnailSrc(thumbPath);
+    } else if (isImage) {
+      setThumbnailSrc(src);
+      setIsLoading(false);
     }
-  }, [src, isVideo]);
+  }, [src, isVideo, isImage]);
 
   useEffect(() => {
-    if (!videoRef.current) return;
+    if (!videoRef.current || !isVideo) return;
     
     const video = videoRef.current;
     
@@ -65,12 +69,12 @@ const Skeleton = () => (
       video.removeEventListener('error', handleError);
       video.pause();
     };
-  }, []);
+  }, [isVideo]);
 
   return (
     <div 
-      className="relative overflow-hidden bg-background-grey dark:bg-background-lightDark shadow-sm border rounded-lg sm:border-radius-inside"
-      style={{ minHeight: "180px" }} // Prevent height collapse
+      className="relative overflow-hidden bg-background-lightDark border sm:border-radius-inside"
+      style={{ maxHeight: "347px", display: "flex", alignItems: "center" }} 
     >
       {/* Blurred Thumbnail */}
       {(isLoading || hasError) && thumbnailSrc && (
@@ -90,7 +94,7 @@ const Skeleton = () => (
       {isLoading && <Skeleton />}
 
       {/* Video Element */}
-      {!hasError && (
+      {!hasError && isVideo && (
         <video 
           ref={videoRef} 
           autoPlay 
@@ -102,6 +106,20 @@ const Skeleton = () => (
           <source src={src} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      )}
+
+      {/* Image Element */}
+      {isImage && (
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-auto object-cover"
+          onLoad={() => setIsLoading(false)}
+          onError={() => {
+            setHasError(true);
+            setIsLoading(false);
+          }}
+        />
       )}
     </div>
   );

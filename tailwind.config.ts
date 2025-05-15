@@ -13,16 +13,14 @@ const config = {
     			input: '',
     			ring: '',
     			background: {
-    				DEFAULT: 'theme(colors.gray.100)',
+    				DEFAULT: '#191919',
     				dark: '#191919',
     				lightDark: '#252525',
     				grey: '#fff'
     			},
     			text: {
-    				DEFAULT: 'theme(colors.gray.800)',
-					gray: 'theme(colors.gray.400)',
-    				dark: '#D5D5D5',
-    				darkBody: '#989898'
+    				DEFAULT: '#E7E7E7',
+    				body: '#898989'
     			}
     		},
     	}

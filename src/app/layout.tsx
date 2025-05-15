@@ -18,6 +18,9 @@ export default function RootLayout({
         <link rel="icon" href="/images/favicon.ico" sizes="any" type="image/x-icon" />
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png"></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet"></link>
         <meta property="og:title" content="Ilya Zoria" />
         <meta property="og:description" content="Product designer" />
         <meta property="og:image" content="/images/thumbnail.jpg" />

@@ -77,7 +77,6 @@ export function LeftCard() {
 
   return (
     <div id="left-card" className="border-radius-outside bg-background-grey dark:bg-background-lightDark border p-6 flex flex-col sm:gap-32 gap-24 relative h-full">
-      {/* <Gridball className="absolute inset-0" /> */}
       <div className="flex justify-between items-center">
         <div className="relative group">
           {/* Default state - simple text */}
@@ -126,32 +125,7 @@ export function LeftCard() {
           </div>
         </div>
           {/* Animated text */}
-      {/* <div className="flex-1 flex items-center justify-center">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={titleIndex}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            transition={transition}
-          >
-            <div className="text-3xl font-medium flex flex-col text-center">
-              <span>Senior product designer</span>
-              <span className="mt-2 text-4xl font-normal">
-                {titleSuffixes[titleIndex].split("").map((letter, index) => (
-                  <motion.span
-                    key={index}
-                    variants={variants}
-                    transition={{ ...transition, delay: index * 0.03 }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
-              </span>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-      </div> */}
+
         <div className="flex flex-col text-center gap-5 mb-3">
           <span className="md:text-5xl text-3xl font-semibold">Ilya Zoria</span>
           {/* <span className="md:text-xl text-lg">
