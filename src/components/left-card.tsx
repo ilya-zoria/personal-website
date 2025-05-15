@@ -154,9 +154,9 @@ export function LeftCard() {
       </div> */}
         <div className="flex flex-col text-center gap-5 mb-3">
           <span className="md:text-5xl text-3xl font-semibold">Ilya Zoria</span>
-          <span className="md:text-xl text-lg">
+          {/* <span className="md:text-xl text-lg">
             Product designer with indiemaker mindset
-          </span>
+          </span> */}
         </div>
         <div className="flex gap-2">
           <Button 
