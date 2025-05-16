@@ -72,10 +72,7 @@ const Skeleton = () => (
   }, [isVideo]);
 
   return (
-    <div 
-      className="relative overflow-hidden bg-background-lightDark border sm:border-radius-inside"
-      style={{ maxHeight: "347px", display: "flex", alignItems: "center" }} 
-    >
+    <div className="relative overflow-hidden w-full h-full min-w-[300px] shrink bg-background-lightDark border border-radius-small sm:border-radius-inside">
       {/* Blurred Thumbnail */}
       {(isLoading || hasError) && thumbnailSrc && (
         <div 
@@ -101,7 +98,7 @@ const Skeleton = () => (
           muted 
           loop 
           playsInline 
-          className={`w-full h-full transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+          className={`w-full h-full object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         >
           <source src={src} type="video/mp4" />
           Your browser does not support the video tag.
@@ -113,7 +110,7 @@ const Skeleton = () => (
         <img
           src={src}
           alt={alt}
-          className="w-full h-auto object-cover"
+          className="w-full h-full object-cover"
           onLoad={() => setIsLoading(false)}
           onError={() => {
             setHasError(true);

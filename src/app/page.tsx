@@ -68,7 +68,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="w-full flex flex-col gap-16 sm:gap-24 p-4 sm:p-8">
+      <div className="w-full flex flex-col gap-16 sm:gap-24 p-8 sm:p-12">
         {/* header */}
         <div className="flex justify-between items-center">
           <div className="relative group flex flex-col">

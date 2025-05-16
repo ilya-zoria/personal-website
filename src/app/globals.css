@@ -106,6 +106,10 @@
     @apply rounded-lg
   }
 
+  .border-radius-small {
+    @apply rounded-md
+  }
+
   /* Dotted divider */
   .dotted-divider {
     border-bottom: 1px dotted transparent; /* Use transparent to maintain height */
