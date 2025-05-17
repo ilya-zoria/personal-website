@@ -18,7 +18,7 @@ const CraftItem: React.FC<CraftItemProps> = ({ src, alt }) => {
   const [thumbnailSrc, setThumbnailSrc] = useState("");
 
 const Skeleton = () => (
-  <div className="absolute inset-0 bg-gray-100 dark:bg-gray-900 animate-pulse" />
+  <div className="absolute inset-0 bg-background-lightDark animate-pulse" />
 );
   
   // Generate a thumbnail path based on the video src
@@ -72,7 +72,7 @@ const Skeleton = () => (
   }, [isVideo]);
 
   return (
-    <div className="relative overflow-hidden w-full h-full min-w-[300px] shrink bg-background-lightDark border border-radius-small sm:border-radius-inside">
+    <div className="relative overflow-hidden w-full h-full shrink bg-background-lightDark border border-radius-small sm:border-radius-inside">
       {/* Blurred Thumbnail */}
       {(isLoading || hasError) && thumbnailSrc && (
         <div 

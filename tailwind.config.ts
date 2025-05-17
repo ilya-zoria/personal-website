@@ -14,9 +14,7 @@ const config = {
     			ring: '',
     			background: {
     				DEFAULT: '#191919',
-    				dark: '#191919',
-    				lightDark: '#252525',
-    				grey: '#fff'
+    				lightDark: '#232323',
     			},
     			text: {
     				DEFAULT: '#E7E7E7',

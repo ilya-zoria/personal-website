@@ -2,13 +2,10 @@
 
 import { useState, useRef, useEffect } from "react";
 import CraftItem from "../components/ui/craft-item";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import ProjectRow from "../components/ui/project-row";
+import { projects } from '@/data/projects';
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 
 export default function Home() {
   const [showCraftModal, setShowCraftModal] = useState(false);
@@ -47,114 +44,64 @@ export default function Home() {
     { src: "/Craft/png/Guidefoot-2.png", alt: "Guidefoot-2" },
     { src: "/Craft/png/Guidefoot-3.png", alt: "Guidefoot-3" },
   ];
-  const craftItemsPoint = [
-    { src: "/Craft/png/Point-1.png", alt: "Point-1" },
-    { src: "/Craft/png/Point-1.png", alt: "Point-1" },
-    { src: "/Craft/png/Point-1.png", alt: "Point-1" },
-  ];
+  // const craftItemsPoint = [
+  //   { src: "/Craft/png/Point-1.png", alt: "Point-1" },
+  //   { src: "/Craft/png/Point-1.png", alt: "Point-1" },
+  //   { src: "/Craft/png/Point-1.png", alt: "Point-1" },
+  // ];
   const craftItemsExplore = [
     { src: "/Craft/spichify.mp4", alt: "spichify" },
     { src: "/Craft/back-to-future.mov", alt: "back-to-future" },
     { src: "/Craft/triple_tree.mp4", alt: "triple_tree" },
   ];
 
-  
-
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <div className="w-full flex flex-col gap-16 sm:gap-24 p-8 sm:p-12">
-        {/* header */}
-        <div className="flex justify-between items-center">
-          <div className="relative group flex flex-col">
-            <span className="">Ilya Zoria</span>
-            <p className="text">Product designer</p>
-          </div>
-          <div className="flex justify-between items-center">
-            <div className="flex gap-4 items-center">
-              <a href="https://docs.google.com/document/d/11aLN-ZYWHOVM0TJ3mkV2PHSwiRUD3Tvy01J-QFZfmC8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
-                cv
-              </a>
-              <a href="https://www.linkedin.com/in/ilya-zoria/" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
-                in
-              </a>
-              <a href="https://x.com/ilya_zoria" target="_blank" rel="noopener noreferrer" className="text-sm hover:underline">
-                x
-              </a>
-            </div>
-          </div>
-        </div>
+        <Header />
+        
         {/* Work */}
         <div className="flex flex-col gap-12">
-          <h2 className="">Work</h2>
+          <h2>Work</h2>
             <ProjectRow
-              title="Brainly. AI Learning Companion"
-              description="Brainly is one of the world's largest learning platforms with over 300M students globally — was entering a new chapter. The product was evolving beyond its roots in community-driven Q&A toward becoming an AI-powered Learning Companion."
+              title={projects['brainly-ai'].title}
+              description={projects['brainly-ai'].description}
               items={craftItemsBrainly}
+              projectId="brainly-ai"
             />
             <ProjectRow
-              title="Carerix"
-              description="Recruitment software for enterprise recruitment and staffing agencies. I was responsible for a new design vision for a 20-year-old applicant tracking system."
+              title={projects['carerix'].title}
+              description={projects['carerix'].description}
               items={craftItemsCarerix}
+              projectId="carerix"
             />
-            <ProjectRow
-              title="CheapOair"
-              description="CheapOair main product in the Fareportal family helps 5M monthly active travellers fly cheaply on over 450 airlines. I was responsible for creating design vision for iOS and Android app."
+            {/* <ProjectRow
+              title={projects['cheapoair'].title}
+              description={projects['cheapoair'].description}
               items={craftItemsCoA}
-            />
+              projectId="cheapoair"
+            /> */}
         </div>
 
         {/* Past projects */}
         <div className="flex flex-col gap-12">
-          <h2 className="">Past projects</h2>
+          <h2>Past projects</h2>
             <ProjectRow
-              title="Guidefoot"
-              description="This is my first startup. Place, where travelers can find experience, emotions and like-minded people. It's similar to Airbnb Experience but for long-lasting tours from 3–30 days with local guides."
+              title={projects['guidefoot'].title}
+              description={projects['guidefoot'].description}
               items={craftItemsGuidefoot}
+              projectId="guidefoot"
             />
-            {/* <ProjectRow
-              title="The Point"
-              description="AI assistant"
-              items={craftItemsPoint}
-            /> */}
             <ProjectRow
-              title="Explorations"
-              description="Different ideas"
+              title={projects['explorations'].title}
+              description={projects['explorations'].description}
               items={craftItemsExplore}
+              projectId="explorations"
             />
         </div>
 
-        {/* Footer */}
-        <div className="w-full flex flex-row justify-between my-4">
-          <p className="text-sm"><a className="hover:underline" href="https://savelife.in.ua/en/">Support Ukraine 🇺🇦</a></p>
-          <div className="flex gap-2 align-baseline">
-            <p className="text-sm">Made with</p>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                <a href="https://www.figma.com/">
-                  <img src="images/icons/ic-figma.svg" alt="ic-figma" width="20" height="20" />
-                </a>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-sm">Figma</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                <a href="https://www.cursor.com/">
-                  <img src="images/icons/ic-cursor.svg" alt="ic-cursor" width="20" height="20" />
-                </a>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="text-sm">Cursor AI</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-        </div>
+        <Footer />
       </div>
     </div>
-  )
+  );
 }
