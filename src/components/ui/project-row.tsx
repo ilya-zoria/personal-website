@@ -8,7 +8,7 @@ interface ProjectRowProps {
 
 const ProjectRow = ({ title, description, items }: ProjectRowProps) => (
     <div className="flex flex-col gap-6">
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 max-w-[600px]">
             <span className="text-dark">{title}</span>
             <p className="class">{description}</p>
         </div>

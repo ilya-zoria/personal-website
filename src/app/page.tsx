@@ -27,16 +27,10 @@ export default function Home() {
     craftItemRefs.current = craftItemRefs.current.slice(0, craftItemsBrainly.length + craftItemsCarerix.length + craftItemsCoA.length + craftItemsGuidefoot.length);
   }, []);
 
-  // { src: "/Craft/spichify.mp4", alt: "spichify" },
-  // { src: "/Craft/pet-app.mp4", alt: "pet-app" },
-  // { src: "/Craft/triple_tree.mp4", alt: "triple_tree" },
-  // { src: "/Craft/back-to-future.mov", alt: "back-to-future" },
-  // { src: "/Craft/nivia.mp4", alt: "nivia" },
-
   const craftItemsBrainly = [
-    { src: "/Craft/ai_learning_companion_interactions.mp4", alt: "learning_companion_interactions" },
+    { src: "/Craft/brainly-main.mp4", alt: "brainly-main" },
     { src: "/Craft/intertactive-widgets.mp4", alt: "intertactive-widgets" },
-    { src: "/Craft/png/Brainly-Q&A.png", alt: "Brainly-Q&A" },
+    { src: "/Craft/ai_learning_companion_interactions.mp4", alt: "learning_companion_interactions" },
   ];
   const craftItemsCarerix = [
     { src: "/Craft/png/Carerix-1.png", alt: "Carerix-1" },
@@ -114,14 +108,14 @@ export default function Home() {
           <h2 className="">Past projects</h2>
             <ProjectRow
               title="Guidefoot"
-              description="First side project. author’s tours"
+              description="This is my first startup. Place, where travelers can find experience, emotions and like-minded people. It's similar to Airbnb Experience but for long-lasting tours from 3–30 days with local guides."
               items={craftItemsGuidefoot}
             />
-            <ProjectRow
+            {/* <ProjectRow
               title="The Point"
               description="AI assistant"
               items={craftItemsPoint}
-            />
+            /> */}
             <ProjectRow
               title="Explorations"
               description="Different ideas"
