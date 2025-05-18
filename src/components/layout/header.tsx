@@ -10,6 +10,14 @@ export default function Header() {
       <div className="flex justify-between items-center">
         <div className="flex gap-4 items-center">
           <a 
+            href="mailto:ilzorya@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-sm hover:underline"
+          >
+            email
+          </a>
+          <a 
             href="https://docs.google.com/document/d/11aLN-ZYWHOVM0TJ3mkV2PHSwiRUD3Tvy01J-QFZfmC8/edit?usp=sharing" 
             target="_blank" 
             rel="noopener noreferrer" 

@@ -31,8 +31,8 @@ export default function Home() {
   ];
   const craftItemsCarerix = [
     { src: "/Craft/png/Carerix-1.png", alt: "Carerix-1" },
-    { src: "/Craft/carerix-job-preview.mp4", alt: "Carerix-job-preview" },
-    { src: "/Craft/carerix_vision.mp4", alt: "carerix_vision" },
+    { src: "/Craft/Carerix-v-1.mp4", alt: "Carerix-v-1" },
+    { src: "/Craft/Carerix-v-2.mp4", alt: "Carerix-v-2" },
   ];
   const craftItemsCoA = [
     { src: "/Craft/png/CoA-1.png", alt: "CoA-1" },
@@ -42,7 +42,7 @@ export default function Home() {
   const craftItemsGuidefoot = [
     { src: "/Craft/png/Guidefoot-1.png", alt: "Guidefoot-1" },
     { src: "/Craft/png/Guidefoot-2.png", alt: "Guidefoot-2" },
-    { src: "/Craft/png/Guidefoot-3.png", alt: "Guidefoot-3" },
+    { src: "/Craft/png/Guidefoot-4.png", alt: "Guidefoot-4" },
   ];
   // const craftItemsPoint = [
   //   { src: "/Craft/png/Point-1.png", alt: "Point-1" },
