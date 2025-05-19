@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex justify-between items-start">
       <div className="relative group flex flex-col">
         <Link href="/" className="hover:underline">Ilya Zoria</Link>
         <p className="text">Product designer</p>

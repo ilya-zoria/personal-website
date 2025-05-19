@@ -26,8 +26,8 @@ export default function Home() {
 
   const craftItemsBrainly = [
     { src: "/Craft/brainly-main.mp4", alt: "brainly-main" },
-    { src: "/Craft/intertactive-widgets.mp4", alt: "intertactive-widgets" },
     { src: "/Craft/ai_learning_companion_interactions.mp4", alt: "learning_companion_interactions" },
+    { src: "/Craft/png/Brainly-1.png", alt: "Brainly-1" },
   ];
   const craftItemsCarerix = [
     { src: "/Craft/png/Carerix-1.png", alt: "Carerix-1" },

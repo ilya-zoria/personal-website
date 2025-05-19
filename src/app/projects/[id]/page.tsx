@@ -22,11 +22,11 @@ export default function Project({ params }: ProjectProps) {
       case 'brainly-ai':
         return (
           <>
-            <CraftItem src="/Craft/intertactive-widgets.mp4" alt="intertactive-widgets" />
+            {/* <CraftItem src="/Craft/intertactive-widgets.mp4" alt="intertactive-widgets" /> */}
             <CraftItem src="/Craft/ai_learning_companion_interactions.mp4" alt="learning_companion_interactions" />
             <CraftItem src="/Craft/png/Brainly-1.png" alt="" />
-            <CraftItem src="/Craft/png/Brainly-2.png" alt="" />
             <CraftItem src="/Craft/png/Brainly-3.png" alt="" />
+            <CraftItem src="/Craft/png/Brainly-2.png" alt="" />
           </>
         );
       case 'carerix':
@@ -39,7 +39,6 @@ export default function Project({ params }: ProjectProps) {
             <CraftItem src="/Craft/png/Carerix-4.png" alt="Carerix-4" />
             <CraftItem src="/Craft/png/Carerix-5.png" alt="Carerix-5" />
             <CraftItem src="/Craft/png/Carerix-6.png" alt="Carerix-6" />
-            <CraftItem src="/Craft/png/Carerix-7.png" alt="Carerix-7" />
           </>
         );
     //   case 'cheapoair':
@@ -76,7 +75,7 @@ export default function Project({ params }: ProjectProps) {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="w-full flex flex-col gap-16 sm:gap-24 p-8 sm:p-12">
+      <div className="w-full flex flex-col gap-16 sm:gap-24">
         <Header />
         
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-6 sm:gap-8">
