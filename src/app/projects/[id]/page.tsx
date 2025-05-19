@@ -58,7 +58,7 @@ export default function Project({ params }: ProjectProps) {
            <CraftItem src="/Craft/png/Guidefoot-5.png" alt="Guidefoot-5" />
           </>
         );
-      case 'explorations':
+      case 'side-projects':
         return (
           <>
             <CraftItem src="/Craft/spichify.mp4" alt="spichify" />

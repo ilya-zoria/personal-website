@@ -68,7 +68,7 @@ export const projects: Record<string, Project> = {
       alt: 'Guidefoot'
     }
   },
-  'explorations': {
+  'side-projects': {
     title: 'Side projects',
     description: 'Selected freelance and side projects',
   }

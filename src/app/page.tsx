@@ -94,10 +94,10 @@ export default function Home() {
               projectId="guidefoot"
             />
             <ProjectRow
-              title={projects['explorations'].title}
-              description={projects['explorations'].description}
+              title={projects['side-projects'].title}
+              description={projects['side-projects'].description}
               items={craftItemsExplore}
-              projectId="explorations"
+              projectId="side-projects"
             />
         </div>
 
