@@ -4,6 +4,7 @@ const path = require('path');
 
 const PUBLIC_DIR = path.join(__dirname, '../public');
 const IMAGES_DIR = path.join(PUBLIC_DIR, 'images');
+const CRAFT_PNG_DIR = path.join(PUBLIC_DIR, 'Craft', 'png');
 
 async function optimizeImage(inputPath) {
   try {
@@ -59,6 +60,7 @@ async function processDirectory(dir) {
 async function main() {
   console.log('Starting image optimization...');
   await processDirectory(IMAGES_DIR);
+  await processDirectory(CRAFT_PNG_DIR);
   console.log('Image optimization complete!');
 }
 
