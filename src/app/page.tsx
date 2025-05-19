@@ -6,6 +6,7 @@ import ProjectRow from "../components/ui/project-row";
 import { projects } from '@/data/projects';
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 export default function Home() {
   const [showCraftModal, setShowCraftModal] = useState(false);
@@ -56,9 +57,51 @@ export default function Home() {
     { src: "/Craft/triple_tree.mp4", alt: "triple_tree" },
   ];
 
+  function AnimatedTestimonialsDemo() {
+    const testimonials = [
+      {
+        quote:
+          "Ilya is always inspired to find better solutions to solve user flows. Creative with new tools and always helpful to push a product to the next phase",
+        name: "Arco Westbroek",
+        designation: "CPO at Carerix",
+        src: "/images/testimonials/Arco.jpeg",
+      },
+      {
+        quote:
+          "Ilya did a fantastic job taking new ideas and conceptualising them. They especially good when requirements and user journeys are at their genesis in the ideation stage.",
+        designation: "VP Digital at Fareportal",
+        name: "Michael Nuciforo",
+        src: "/images/testimonials/Michael_Nuciforo.jpeg",
+      },
+      {
+        quote:
+          "We enjoyed working with Ilya on the Mood Tracking App, and I was impressed with thier dedication, creativity, and attention to detail.",
+        name: "Dmitriy Dovgan",
+        designation: "Founder of The Point",
+        src: "/images/testimonials/Dmitriy_Dovgan.jpeg",
+        
+      },
+      {
+        quote:
+          "I had the great pleasure of working closely with Ilya on Brainly’s transformation from a Q&A into a Learning Companion experience.",
+        name: "Agnieszka Stanisławska",
+        designation: "Senior Product Manager at Brainly",
+        src: "/images/testimonials/Agnieszka_Stanisławska.jpeg",
+      },
+      {
+        quote:
+          "Ilya brings a perfect mix of strategic thinking, creativity, and execution to every project.",
+        name: "Fabio Secci",
+        designation: "Design leader at Brainly",
+        src: "/images/testimonials/Fabio_Secci.jpeg",
+      },
+    ];
+    return <AnimatedTestimonials testimonials={testimonials} autoplay={true} />;
+  }
+
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="w-full flex flex-col gap-16 sm:gap-24 p-6 sm:p-12">
+      <div className="w-full flex flex-col gap-28 sm:gap-40 p-6 sm:p-12">
         <Header />
         
         {/* Work */}
@@ -101,6 +144,11 @@ export default function Home() {
             />
         </div>
 
+        {/* Testimonials */}
+        <div className="flex flex-col gap-0 sm:gap-8">
+          <h2 className="text-center">People I worked with</h2>
+          <AnimatedTestimonialsDemo />
+        </div>
         <Footer />
       </div>
     </div>
