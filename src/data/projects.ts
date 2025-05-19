@@ -69,7 +69,7 @@ export const projects: Record<string, Project> = {
     }
   },
   'explorations': {
-    title: 'Freelance & side projects',
-    description: 'Selected freelance and side projects focused on interaction design',
+    title: 'Side projects',
+    description: 'Selected freelance and side projects',
   }
 }; 
