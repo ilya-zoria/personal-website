@@ -7,7 +7,7 @@ import {
 
 export default function Footer() {
   return (
-    <div className="w-full flex flex-row justify-between my-4">
+    <div className="w-full flex flex-row justify-between">
       <p className="text-sm">
         <a className="hover:underline" href="https://savelife.in.ua/en/">
           Support Ukraine 🇺🇦
