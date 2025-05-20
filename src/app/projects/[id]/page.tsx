@@ -75,7 +75,7 @@ export default function Project({ params }: ProjectProps) {
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
-      <div className="w-full flex flex-col gap-16 sm:gap-24 p-8 sm:p-12">
+      <div className="w-full flex flex-col gap-16 sm:gap-24 p-6 sm:p-12">
         <Header />
         
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-6 sm:gap-8">
