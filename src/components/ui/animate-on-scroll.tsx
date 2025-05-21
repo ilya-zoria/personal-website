@@ -12,12 +12,12 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 60, filter: "blur(5px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       transition={{
-        duration: 0.7,
+        duration: 1,
         delay: delay,
-        ease: [0.455, 0.03, 0.515, 0.955],
+        ease: [0, 0, 0.2, 1],
       }}
       viewport={{ once: true }}
     >
