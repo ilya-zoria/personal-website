@@ -43,7 +43,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Ilya Zoria - Product Designer" />
         <meta name="twitter:description" content="Portfolio website of Ilya Zoria." />
-        <meta name="twitter:image" content="/thumbnail.jpg" />
+        <meta name="twitter:image" content="/images/thumbnail.jpg" />
         
         {/* Analytics */}
         <Script
