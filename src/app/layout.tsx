@@ -3,8 +3,8 @@ import Script from 'next/script'
 import "./globals.css"
 
 export const metadata = {
-  title: 'Ilya Zoria',
-  description: 'Product designer',
+  title: 'Ilya Zoria - Product Designer',
+  description: 'Portfolio website of Ilya Zoria.',
 }
 
 export default function RootLayout({
@@ -35,14 +35,14 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet" />
         
         {/* Meta tags */}
-        <meta property="og:title" content="Ilya Zoria" />
-        <meta property="og:description" content="Product designer" />
+        <meta property="og:title" content="Ilya Zoria - Product Designer" />
+        <meta property="og:description" content="Portfolio website of Ilya Zoria." />
         <meta property="og:image" content="/images/thumbnail.jpg" />
         <meta property="og:url" content="https://ilyazoria.design/" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ilya Zoria" />
-        <meta name="twitter:description" content="Product designer" />
+        <meta name="twitter:title" content="Ilya Zoria - Product Designer" />
+        <meta name="twitter:description" content="Portfolio website of Ilya Zoria." />
         <meta name="twitter:image" content="/thumbnail.jpg" />
         
         {/* Analytics */}
