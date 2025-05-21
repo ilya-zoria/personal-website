@@ -48,7 +48,7 @@ export const AnimatedTestimonials = ({
   };
 
   return (
-    <div className={cn("w-full md:max-w-4xl mx-auto px-0 md:px-8 lg:px-12 pt-0 pb-0 sm:pt-20 sm:pb-20", className)}>
+    <div className={cn("w-full md:max-w-4xl mx-auto px-0 md:px-8 lg:px-12 pt-14 pb-0 sm:pt-20 sm:pb-20", className)}>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex mx-auto">
           <div className="relative h-40 w-40 sm:h-60 sm:w-60">
