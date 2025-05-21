@@ -1,8 +1,13 @@
+"use client";
+
 import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import CraftItem from "@/components/ui/craft-item";
+import AnimateOnScroll from "@/components/ui/animate-on-scroll";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface ProjectProps {
   params: {
@@ -79,37 +84,63 @@ export default function Project({ params }: ProjectProps) {
         <Header />
         
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-6 sm:gap-8">
-            <div className="max-w-3xl mx-auto flex flex-col gap-6 sm:gap-8 mb-8">
-                <h2 className="text-left sm:text-center">{project.title}</h2>
-                <p className="big-body text-left sm:text-center">{project.description}</p>
+            <div className="max-w-3xl mx-auto flex flex-col gap-6 sm:gap-8 mb-8 items-center">
+                <AnimateOnScroll delay={0.1}>
+                    <h2 className="text-left sm:text-center">{project.title}</h2>
+                </AnimateOnScroll>
+                <AnimateOnScroll delay={0.2}>
+                    <p className="big-body text-left sm:text-center">
+                        {project.description.split("").map((char, index) => (
+                            <motion.span
+                                key={index}
+                                initial={{ opacity: 0, y: 5 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{
+                                    duration: 0.2,
+                                    ease: "easeInOut",
+                                    delay: 0.01 * index,
+                                }}
+                                className="inline-block"
+                            >
+                                {char === " " ? "\u00A0" : char}
+                            </motion.span>
+                        ))}
+                    </p>
+                </AnimateOnScroll>
                 {project.case && (
-                 <div className="bg-background-lightDark rounded-full text-center px-4 py-2 max-w-3xl mx-0 sm:mx-auto">
-                    <p className="">{project.case}</p>
-                </div>
+                 <AnimateOnScroll delay={0.3}>
+                     <div className="bg-background-lightDark rounded-full text-center px-4 py-2">
+                        <p className="">{project.case}</p>
+                    </div>
+                 </AnimateOnScroll>
                 )}
             </div>
 
             {/* project image/video */}
             {project.media && (
-                <div>
-                  <div className="relative aspect-video">
-                      {project.media.type === 'video' ? (
-                      <video
-                          src={project.media.src}
-                          className="object-cover w-full h-full border-radius-small sm:border-radius-inside"
-                          controls
-                          playsInline
-                          muted
-                      />
-                      ) : (
-                      <img
-                          src={project.media.src}
-                          alt={project.media.alt}
-                          className="object-cover w-full h-full border-radius-small sm:border-radius-inside"
-                      />
-                      )}
+                <AnimateOnScroll delay={0.4}>
+                    <div>
+                      <div className="relative aspect-video">
+                          {project.media.type === 'video' ? (
+                          <video
+                              src={project.media.src}
+                              className="object-cover w-full h-full border-radius-small sm:border-radius-inside"
+                              controls
+                              playsInline
+                              muted
+                          />
+                          ) : (
+                          <Image
+                              src={project.media.src}
+                              alt={project.media.alt}
+                              fill
+                              className="object-cover border-radius-small sm:border-radius-inside"
+                              priority={true}
+                          />
+                          )}
+                      </div>
                   </div>
-              </div>      
+                </AnimateOnScroll>      
             )}
 
             {/* project description */}
@@ -136,9 +167,11 @@ export default function Project({ params }: ProjectProps) {
                 </div>
             </div> */}
 
-            <div className="flex flex-col gap-6 sm:gap-8">
-                {renderContent()}
-            </div>
+            <AnimateOnScroll delay={0.5}>
+              <div className="flex flex-col gap-6 sm:gap-8">
+                  {renderContent()}
+              </div>
+            </AnimateOnScroll>
         </div>
         <Footer />
       </div>

@@ -162,9 +162,6 @@
 }
 
 @layer components {
-  .text-darkBody {
-    color: theme('colors.text.darkBody'); /* Define the custom class */
-  }
 
   /* Update border colors for dark mode */
   .border {

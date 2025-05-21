@@ -13,6 +13,17 @@ async function optimizeImage(inputPath) {
     
     // Create a temporary file
     const tempPath = `${inputPath}.temp`;
+    const webpPath = inputPath.replace(/\.(png|jpg|jpeg)$/, '.webp');
+    
+    // Generate responsive sizes
+    const sizes = [640, 1024, 1920];
+    const responsiveImages = sizes.map(size => {
+      const outputPath = inputPath.replace(/\.(png|jpg|jpeg)$/, `-${size}.webp`);
+      return image
+        .resize(size)
+        .webp({ quality: 80 })
+        .toFile(outputPath);
+    });
     
     // Optimize based on file type
     if (metadata.format === 'png') {
@@ -28,6 +39,11 @@ async function optimizeImage(inputPath) {
       return;
     }
     
+    // Generate WebP version
+    await image
+      .webp({ quality: 80 })
+      .toFile(webpPath);
+    
     const originalSize = fs.statSync(inputPath).size;
     const newSize = fs.statSync(tempPath).size;
     const savings = ((originalSize - newSize) / originalSize * 100).toFixed(2);
@@ -37,6 +53,11 @@ async function optimizeImage(inputPath) {
     fs.renameSync(tempPath, inputPath);
     
     console.log(`Optimized ${path.basename(inputPath)}: ${originalSize} bytes → ${newSize} bytes (${savings}% savings)`);
+    console.log(`Generated WebP version: ${path.basename(webpPath)}`);
+    
+    // Wait for all responsive images to be generated
+    await Promise.all(responsiveImages);
+    console.log(`Generated responsive sizes for ${path.basename(inputPath)}`);
   } catch (error) {
     console.error(`Error optimizing ${inputPath}:`, error);
   }

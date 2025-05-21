@@ -7,6 +7,7 @@ import { projects } from '@/data/projects';
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
+import AnimateOnScroll from "@/components/ui/animate-on-scroll";
 
 export default function Home() {
   const [showCraftModal, setShowCraftModal] = useState(false);
@@ -83,7 +84,7 @@ export default function Home() {
       },
       {
         quote:
-          "I had the great pleasure of working closely with Ilya on Brainly’s transformation from a Q&A into a Learning Companion experience.",
+          "I had the great pleasure of working closely with Ilya on Brainly's transformation from a Q&A into a Learning Companion experience.",
         name: "Agnieszka Stanisławska",
         designation: "Senior Product Manager at Brainly",
         src: "/images/testimonials/Agnieszka_Stanisławska.jpeg",
@@ -106,48 +107,52 @@ export default function Home() {
         
         {/* Work */}
         <div className="flex flex-col gap-12">
-          <h2>Work</h2>
-            <ProjectRow
-              title={projects['brainly-ai'].title}
-              description={projects['brainly-ai'].description}
-              items={craftItemsBrainly}
-              projectId="brainly-ai"
-            />
-            <ProjectRow
-              title={projects['carerix'].title}
-              description={projects['carerix'].description}
-              items={craftItemsCarerix}
-              projectId="carerix"
-            />
-            {/* <ProjectRow
-              title={projects['cheapoair'].title}
-              description={projects['cheapoair'].description}
-              items={craftItemsCoA}
-              projectId="cheapoair"
-            /> */}
+          <AnimateOnScroll delay={0}><h2>Work</h2></AnimateOnScroll>
+            <AnimateOnScroll delay={0.1}>
+              <ProjectRow
+                title={projects['brainly-ai'].title}
+                description={projects['brainly-ai'].description}
+                items={craftItemsBrainly}
+                projectId="brainly-ai"
+              />
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={0.2}>
+              <ProjectRow
+                title={projects['carerix'].title}
+                description={projects['carerix'].description}
+                items={craftItemsCarerix}
+                projectId="carerix"
+              />
+            </AnimateOnScroll>
         </div>
 
         {/* Past projects */}
         <div className="flex flex-col gap-12">
-          <h2>Past projects</h2>
-            <ProjectRow
-              title={projects['guidefoot'].title}
-              description={projects['guidefoot'].description}
-              items={craftItemsGuidefoot}
-              projectId="guidefoot"
-            />
-            <ProjectRow
-              title={projects['side-projects'].title}
-              description={projects['side-projects'].description}
-              items={craftItemsExplore}
-              projectId="side-projects"
-            />
+          <AnimateOnScroll delay={0.3}><h2>Past projects</h2></AnimateOnScroll>
+            <AnimateOnScroll delay={0.4}>
+              <ProjectRow
+                title={projects['guidefoot'].title}
+                description={projects['guidefoot'].description}
+                items={craftItemsGuidefoot}
+                projectId="guidefoot"
+              />
+            </AnimateOnScroll>
+            <AnimateOnScroll delay={0.5}>
+              <ProjectRow
+                title={projects['side-projects'].title}
+                description={projects['side-projects'].description}
+                items={craftItemsExplore}
+                projectId="side-projects"
+              />
+            </AnimateOnScroll>
         </div>
 
         {/* Testimonials */}
         <div className="flex flex-col gap-0 sm:gap-8">
-          <h2 className="text-center">People I worked with</h2>
-          <AnimatedTestimonialsDemo />
+          <AnimateOnScroll delay={0.6}><h2 className="text-center">People I worked with</h2></AnimateOnScroll>
+          <AnimateOnScroll delay={0.7}>
+            <AnimatedTestimonialsDemo />
+          </AnimateOnScroll>
         </div>
         <Footer />
       </div>

@@ -16,15 +16,36 @@ const CraftItem: React.FC<CraftItemProps> = ({ src, alt }) => {
   const [hasError, setHasError] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [thumbnailSrc, setThumbnailSrc] = useState("");
+  const [isVisible, setIsVisible] = useState(false);
 
-const Skeleton = () => (
-  <div className="absolute inset-0 bg-background-lightDark animate-pulse" />
-);
+  const Skeleton = () => (
+    <div className="absolute inset-0 bg-background-lightDark animate-pulse" />
+  );
   
+  // Intersection Observer for lazy loading
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '50px 0px',
+        threshold: 0.1
+      }
+    );
+
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   // Generate a thumbnail path based on the video src
   useEffect(() => {
     if (isVideo) {
-      // Replace video extension with jpg (assuming thumbnails exist with same base name)
       const thumbPath = src.replace(/\/Craft\/(.*)\.(mp4|mov)$/, "/Craft/thumbnails/$1-thumb.jpg");
       setThumbnailSrc(thumbPath);
     } else if (isImage) {
@@ -34,12 +55,11 @@ const Skeleton = () => (
   }, [src, isVideo, isImage]);
 
   useEffect(() => {
-    if (!videoRef.current || !isVideo) return;
+    if (!videoRef.current || !isVideo || !isVisible) return;
     
     const video = videoRef.current;
     
     const handleLoadedMetadata = () => {
-      // Start transitioning once we have basic video metadata
       setIsLoading(false);
     };
     
@@ -61,7 +81,10 @@ const Skeleton = () => (
     video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('error', handleError);
     
-    video.load();
+    // Only load video when it's visible
+    if (isVisible) {
+      video.load();
+    }
     
     return () => {
       video.removeEventListener('loadedmetadata', handleLoadedMetadata);
@@ -69,10 +92,10 @@ const Skeleton = () => (
       video.removeEventListener('error', handleError);
       video.pause();
     };
-  }, [isVideo]);
+  }, [isVideo, isVisible]);
 
   return (
-    <div className="relative overflow-hidden w-full h-full shrink bg-background-lightDark border border-radius-small sm:border-radius-inside">
+    <div ref={containerRef} className="relative overflow-hidden w-full h-full shrink bg-background-lightDark border border-radius-small sm:border-radius-inside">
       {/* Blurred Thumbnail */}
       {(isLoading || hasError) && thumbnailSrc && (
         <div 
@@ -91,13 +114,14 @@ const Skeleton = () => (
       {isLoading && <Skeleton />}
 
       {/* Video Element */}
-      {!hasError && isVideo && (
+      {!hasError && isVideo && isVisible && (
         <video 
           ref={videoRef} 
           autoPlay 
           muted 
           loop 
           playsInline 
+          preload="metadata"
           className={`w-full h-full object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         >
           <source src={src} type="video/mp4" />
@@ -110,6 +134,7 @@ const Skeleton = () => (
         <img
           src={src}
           alt={alt}
+          loading="lazy"
           className="w-full h-full object-cover"
           onLoad={() => setIsLoading(false)}
           onError={() => {
