@@ -85,12 +85,12 @@ export default function Project({ params }: ProjectProps) {
         <Header />
         
         <div className="max-w-5xl mx-auto w-full flex flex-col gap-6 sm:gap-8">
-            <div className="max-w-3xl mx-auto flex flex-col gap-6 sm:gap-8 mb-8 items-center">
+            <div className="max-w-3xl mx-auto flex flex-col gap-6 sm:gap-8 mb-8 items-left sm:items-center text-left sm:text-center">
                 <AnimateOnScroll delay={0.1}>
-                    <h2 className="text-left sm:text-center">{project.title}</h2>
+                    <h2 className="">{project.title}</h2>
                 </AnimateOnScroll>
                 <AnimateOnScroll delay={0.2}>
-                    <p className="big-body text-left sm:text-center">
+                    <p className="big-body">
                         {project.description.split(' ').map((word, index, array) => (
                             <React.Fragment key={index}>
                                 <motion.span
