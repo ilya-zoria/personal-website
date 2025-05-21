@@ -3,9 +3,11 @@
 import BaseCard from "./base-card"
 import { useState, useMemo } from "react"
 import { Plus, X } from 'lucide-react'
+import Photo from "@/components/ui/photo";
 import { Modal } from './ui/modal'
 import { Button } from "./ui/button"
 import AboutInnerCard from "./ui/about-inner-card"
+import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel"; 
 import Autoplay from "embla-carousel-autoplay"
 import * as React from "react"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -121,13 +123,13 @@ export function AboutCard({ title, imageSrc }: AboutCardProps) {
               For over a decade, I've been helping companies bridge the gap between user needs and product vision through thoughtful design. Currently, I'm at <a className="hover:underline" href="https://brainly.com">Brainly</a>, designing AI tools to help students study smarter.
             </p>
             <p className="mt-4">
-              Originally from 🇺🇦 Ukraine, I'm now based in 🇪🇸 Spain (because of a crazy neighbor). Actually, the war has changed not only my location; it has changed everything in my life. It’s like clicking the <code>Reset</code> button and starting onboarding from the beginning. But that’s another story.
+              Originally from 🇺🇦 Ukraine, I'm now based in 🇪🇸 Spain (because of a crazy neighbor). Actually, the war has changed not only my location; it has changed everything in my life. It's like clicking the <code>Reset</code> button and starting onboarding from the beginning. But that's another story.
             </p>
             <p className="mt-4">
               I love creating intuitive user experiences and prototyping new ideas in Figma or code. I don't limit myself to design only—I truly enjoy building products with the power of AI (thanks to Cursor and v0). I believe in a future where everyone can create their own products for their own needs. I'm working on that as well...
             </p>
             <p className="mt-4">
-              When I’m not designing, I enjoy playing music with 🎸 + 🎹 and exploring the world with my family 👦🏼 👧🏻.
+              When I'm not designing, I enjoy playing music with 🎸 + 🎹 and exploring the world with my family 👦🏼 👧🏻.
             </p>
             <img src="/images/about/about-preview.png" className="mt-6 border-radius-inside" alt="About preview" />
           </div>
