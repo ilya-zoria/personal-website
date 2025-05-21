@@ -149,7 +149,9 @@ export default function Home() {
 
         {/* Testimonials */}
         <div className="flex flex-col gap-0 sm:gap-8">
-          <AnimateOnScroll delay={0.6}><h2 className="text-center">People I worked with</h2></AnimateOnScroll>
+          <AnimateOnScroll delay={0.6}>
+            <h2 className="text-center">People I worked with</h2>
+          </AnimateOnScroll>
           <AnimateOnScroll delay={0.7}>
             <AnimatedTestimonialsDemo />
           </AnimateOnScroll>
