@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react"
 import { motion, easeInOut, AnimatePresence } from "framer-motion"
 import { Moon, Sun, MapPin } from 'lucide-react'
 import { useTheme } from "../components/theme-provider"
-import Gridball from "./ui/Gridball"
 import Image from "next/image"
 import { Button } from "./ui/button"
 import gsap from "gsap"
