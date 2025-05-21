@@ -8,6 +8,7 @@ import CraftItem from "@/components/ui/craft-item";
 import AnimateOnScroll from "@/components/ui/animate-on-scroll";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import React from "react";
 
 interface ProjectProps {
   params: {
@@ -90,20 +91,22 @@ export default function Project({ params }: ProjectProps) {
                 </AnimateOnScroll>
                 <AnimateOnScroll delay={0.2}>
                     <p className="big-body text-left sm:text-center">
-                        {project.description.split("").map((char, index) => (
-                            <motion.span
-                                key={index}
-                                initial={{ opacity: 0, y: 5 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{
-                                    duration: 0.2,
-                                    ease: "easeInOut",
-                                    delay: 0.01 * index,
-                                }}
-                                className="inline-block"
-                            >
-                                {char === " " ? "\u00A0" : char}
-                            </motion.span>
+                        {project.description.split(' ').map((word, index, array) => (
+                            <React.Fragment key={index}>
+                                <motion.span
+                                    initial={{ opacity: 0, y: 5 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.2,
+                                        ease: "easeInOut",
+                                        delay: 0.05 * index,
+                                    }}
+                                    className="inline-block"
+                                >
+                                    {word}
+                                </motion.span>
+                                {index < array.length - 1 && ' '}
+                            </React.Fragment>
                         ))}
                     </p>
                 </AnimateOnScroll>
