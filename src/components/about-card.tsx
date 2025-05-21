@@ -3,11 +3,9 @@
 import BaseCard from "./base-card"
 import { useState, useMemo } from "react"
 import { Plus, X } from 'lucide-react'
-import Photo from "./ui/photo";
 import { Modal } from './ui/modal'
 import { Button } from "./ui/button"
 import AboutInnerCard from "./ui/about-inner-card"
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel"; 
 import Autoplay from "embla-carousel-autoplay"
 import * as React from "react"
 import { Checkbox } from "@/components/ui/checkbox"
